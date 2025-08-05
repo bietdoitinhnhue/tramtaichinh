@@ -1,0 +1,462 @@
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="N3Uio38eubzG1wzmJhuOeZQm2gCwSn5iYkywklIu3Ac" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Trạm Tài Chính – Dẫn đầu giải pháp tính toán đầu tư Trạm Sạc Xe Điện</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Trạm Tài Chính – Đội ngũ chuyên gia đầu tư trạm sạc xe điện, giúp doanh nghiệp tối ưu vận hành và tăng trưởng vượt trội với các giải pháp trạm sạc thông minh, tích hợp solar, tối ưu tài chính và đầu tư xanh.">
+  <meta name="keywords" content="đầu tư trạm sạc xe điện, trạm sạc xe điện, kinh doanh trạm sạc, giải pháp trạm sạc, trạm sạc thông minh, trạm sạc nhanh, trạm sạc VinFast, lắp đặt trạm sạc, chi phí trạm sạc xe điện, lợi nhuận trạm sạc, mô hình kinh doanh trạm sạc, đầu tư xanh, giải pháp tài chính trạm sạc, cho thuê trạm sạc, đối tác trạm sạc, solar năng lượng mặt trời, trạm sạc xe điện tại Hà Nội, trạm sạc xe điện TP.HCM, hệ thống sạc thông minh, tài chính xe điện, green energy, public charging station, electric vehicle charging, EV charging station, EV business, automation, tự động hóa trạm sạc, chuyển đổi số ngành năng lượng, tramtaichinh.com, tài chính đầu tư xe điện, hợp tác trạm sạc, phát triển bền vững, kinh doanh xanh, giải pháp tài chính doanh nghiệp, tài trợ đầu tư trạm sạc">
+
+  <!-- Open Graph for Facebook -->
+  <meta property="og:title" content="Trạm Tài Chính – Dẫn đầu giải pháp tính toán đầu tư Trạm Sạc Xe Điện" />
+  <meta property="og:description" content="Tối ưu vận hành, tăng trưởng bền vững, đồng hành cùng doanh nghiệp, nhà đầu tư đón đầu xu hướng xe điện và năng lượng xanh." />
+  <meta property="og:image" content="https://tramtaichinh.com/ogimage.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tramtaichinh.com/" />
+  <meta property="og:site_name" content="Trạm Tài Chính" />
+  <meta property="fb:app_id" content="3884767275114632" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Trạm Tài Chính – Dẫn đầu giải pháp tính toán đầu tư Trạm Sạc Xe Điện.">
+  <meta name="twitter:description" content="Đồng hành chuyển đổi số, tối ưu tài chính, đầu tư bền vững với trạm sạc xe điện thông minh và năng lượng sạch.">
+  <meta name="twitter:image" content="https://tramtaichinh.com/ogimage.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://tramtaichinh.com/favicon.png">
+
+  <!-- Roboto font -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f9f7; /* Light greenish background */
+        }
+        .main-content {
+            background-color: #f8f9fa;
+        }
+        .input-card, .output-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .kpi-card {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom: 1.25rem;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #495057;
+            font-size: 0.9rem;
+        }
+        .input-field, .select-field {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ced4da;
+            border-radius: 0.5rem;
+            background-color: #fffcf5; /* Beige/yellowish background */
+        }
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #dee2e6;
+            outline: none;
+            opacity: 0.9;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+            border-radius: 9999px;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #0d6efd;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 220px;
+        }
+        @media (min-width: 640px) {
+            .chart-container {
+                height: 250px;
+            }
+        }
+        .table-header {
+            background-color: #fff5f5; /* Light red background for header */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="flex flex-col lg:flex-row min-h-screen">
+        <!-- Left Panel: Inputs -->
+        <aside class="w-full lg:w-1/3 xl:w-1/4 p-4 md:p-6 bg-white border-r border-gray-200">
+            <h2 class="text-xl md:text-2xl font-bold mb-6 text-gray-800">Cấu Hình Đầu Tư</h2>
+            
+            <div class="overflow-y-auto lg:max-h-[calc(100vh-120px)]">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-bold text-gray-700 border-b pb-2 mb-3">Chọn Loại Trụ Sạc</h3>
+                        <div id="charger-inputs" class="space-y-4"></div>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-gray-700 border-b pb-2 mb-3">Thông Số Vận Hành</h3>
+                        <div class="input-group">
+                            <label for="sessions-per-day">Lượt sạc/trụ/ngày: <span id="sessions-per-day-value" class="font-bold text-blue-600">12</span></label>
+                            <input type="range" min="1" max="24" value="12" class="slider" id="sessions-per-day">
+                        </div>
+                        <div class="input-group">
+                             <label for="kwh-per-session">Dung lượng sạc TB/lượt (kWh): <span id="kwh-per-session-value" class="font-bold text-blue-600">50</span></label>
+                            <input type="range" min="5" max="100" value="50" class="slider" id="kwh-per-session">
+                        </div>
+                        <div class="input-group">
+                            <label for="selling-price">Giá sạc bán ra (VNĐ/kWh)</label>
+                            <input type="number" id="selling-price" class="input-field" value="3858">
+                        </div>
+                         <div class="input-group">
+                            <label for="electricity-cost">Giá điện đầu vào</label>
+                            <select id="electricity-cost" class="select-field">
+                                <option value="1746">Giờ thấp điểm - 1,653 VNĐ/kWh</option>
+                                <option value="2871">Giờ bình thường - 2,755 VNĐ/kWh</option>
+                                <option value="3321" selected>Bình quân giá - 3,291 VNĐ/kWh</option>
+                                <option value="4587">Giờ cao điểm - 4,298 VNĐ/kWh</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="opex-rent">Chi phí mặt bằng/tháng (VNĐ)</label>
+                            <input type="number" id="opex-rent" class="input-field" value="5000000" step="1000000">
+                        </div>
+                        <div class="input-group">
+                            <label for="opex-personnel">Chi phí nhân công/tháng (VNĐ)</label>
+                            <input type="number" id="opex-personnel" class="input-field" value="3000000" step="1000000">
+                        </div>
+                        <div class="input-group">
+                            <label for="opex-maintenance">Chi phí bảo trì/tháng (VNĐ)</label>
+                            <input type="number" id="opex-maintenance" class="input-field" value="2000000" step="1000000">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Panel: Outputs -->
+        <main class="w-full lg:w-2/3 xl:w-3/4 p-4 md:p-6 main-content">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">CÔNG CỤ TÍNH TOÁN ĐẦU TƯ TRẠM SẠC XE ĐIỆN</h1>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                <div class="kpi-card">
+                    <h3 class="text-gray-600 font-semibold text-xs sm:text-sm">Tổng đầu tư ban đầu</h3>
+                    <p id="kpi-capex" class="text-lg sm:text-xl md:text-2xl font-bold text-blue-700 mt-2">0 ₫</p>
+                </div>
+                <div class="kpi-card">
+                    <h3 class="text-gray-600 font-semibold text-xs sm:text-sm">Doanh thu hàng tháng</h3>
+                    <p id="kpi-revenue" class="text-lg sm:text-xl md:text-2xl font-bold text-green-600 mt-2">0 ₫</p>
+                </div>
+                <div class="kpi-card">
+                    <h3 class="text-gray-600 font-semibold text-xs sm:text-sm">Chi Phí Vận Hành/Tháng</h3>
+                    <p id="kpi-opex" class="text-lg sm:text-xl md:text-2xl font-bold text-red-600 mt-2">0 ₫</p>
+                </div>
+                <div class="kpi-card">
+                    <h3 class="text-gray-600 font-semibold text-xs sm:text-sm">Lợi Nhuận/Tháng</h3>
+                    <p id="kpi-profit" class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mt-2">0 ₫</p>
+                </div>
+                <div class="kpi-card">
+                    <h3 class="text-gray-600 font-semibold text-xs sm:text-sm">Thời Gian Hoàn Vốn</h3>
+                    <p id="kpi-payback" class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mt-2">N/A</p>
+                </div>
+                <div class="kpi-card">
+                    <h3 class="text-gray-600 font-semibold text-xs sm:text-sm">ROI Hàng Năm</h3>
+                    <p id="kpi-roi" class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mt-2">N/A</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
+                <div class="output-card">
+                    <h3 class="text-lg font-bold text-center mb-4">Cơ Cấu Chi Phí Vận Hành</h3>
+                    <div class="chart-container">
+                        <canvas id="opexChart"></canvas>
+                    </div>
+                </div>
+                <div class="output-card">
+                    <h3 class="text-lg font-bold text-center mb-4">Doanh Thu vs Chi Phí</h3>
+                    <div class="chart-container">
+                        <canvas id="financeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="output-card">
+                 <h3 class="text-lg font-bold mb-4">Chi Tiết Đầu Tư Theo Loại Trụ</h3>
+                 <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead class="table-header">
+                            <tr>
+                                <th class="p-3 font-semibold">Loại Trụ</th>
+                                <th class="p-3 font-semibold text-center">Số Lượng</th>
+                                <th class="p-3 font-semibold text-right">Đơn Giá</th>
+                                <th class="p-3 font-semibold text-right">Tổng Tiền</th>
+                                <th class="p-3 font-semibold text-right">Doanh Thu/Tháng</th>
+                            </tr>
+                        </thead>
+                        <tbody id="investment-details-body">
+                            <!-- JS will populate this -->
+                        </tbody>
+                        <tfoot class="font-bold border-t-2">
+                            <tr>
+                                <td class="p-3" colspan="3">TỔNG CỘNG</td>
+                                <td class="p-3 text-right" id="total-investment-table">0 ₫</td>
+                                <td class="p-3 text-right" id="total-revenue-table">0 ₫</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                 </div>
+            </div>
+        </main>
+    </div>
+
+<script>
+const chargerData = [
+    { id: 'ac7', name: 'Trụ 7.4KW', price: 11000000, type: 'Trụ Sạc Chậm' },
+    { id: 'ac11', name: 'Trụ 11KW', price: 12000000, type: 'Trụ Sạc Chậm' },
+    { id: 'dc20', name: 'Trụ 20KW', price: 96000000, type: 'Trụ Sạc Nhanh' },
+    { id: 'dc30', name: 'Trụ 30KW', price: 143220000, type: 'Trụ Sạc Nhanh' },
+    { id: 'dc60', name: 'Trụ 60KW', price: 278410000, type: 'Trụ Sạc Nhanh' },
+    { id: 'dc120', name: 'Trụ 120KW', price: 415910000, type: 'Trụ Sạc Nhanh' },
+    { id: 'dc150', name: 'Trụ 150KW', price: 676060000, type: 'Trụ Sạc Nhanh' },
+    { id: 'dc250', name: 'Trụ 250KW', price: 3272280000, type: 'Trụ Sạc Nhanh' }
+];
+
+const FONT_COLOR = '#495057';
+const GRID_COLOR = '#dee2e6';
+
+function formatCurrency(value) {
+    if (isNaN(value) || value === null) return "0 ₫";
+    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value);
+}
+
+let opexChart, financeChart;
+
+function initializeCharts() {
+    const opexCtx = document.getElementById('opexChart').getContext('2d');
+    opexChart = new Chart(opexCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Điện đầu vào', 'Mặt bằng', 'Nhân công', 'Bảo trì'],
+            datasets: [{
+                data: [0, 0, 0, 0],
+                backgroundColor: ['#0d6efd', '#ffc107', '#6c757d', '#dc3545'],
+                borderColor: '#ffffff',
+                borderWidth: 2,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { position: 'bottom', labels: { color: FONT_COLOR } } }
+        }
+    });
+
+    const financeCtx = document.getElementById('financeChart').getContext('2d');
+    financeChart = new Chart(financeCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Kết quả tài chính'],
+            datasets: [
+                { label: 'Doanh thu', data: [0], backgroundColor: '#198754' },
+                { label: 'Chi phí', data: [0], backgroundColor: '#dc3545' }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: { ticks: { color: FONT_COLOR, callback: (v) => `${v/1000000}M` }, grid: { color: GRID_COLOR } },
+                x: { ticks: { color: FONT_COLOR }, grid: { display: false } }
+            },
+            plugins: { legend: { position: 'top', labels: { color: FONT_COLOR } } }
+        }
+    });
+}
+
+function updateCharts(results) {
+    opexChart.data.datasets[0].data = [results.opex.electricity, results.opex.rent, results.opex.personnel, results.opex.maintenance];
+    opexChart.update();
+
+    financeChart.data.datasets[0].data = [results.revenue.monthly];
+    financeChart.data.datasets[1].data = [results.opex.total];
+    financeChart.update();
+}
+
+function calculate() {
+    const inputs = {};
+    chargerData.forEach(c => {
+        inputs[c.id] = parseInt(document.getElementById(`charger-${c.id}`).value) || 0;
+    });
+
+    const sessionsPerDay = parseInt(document.getElementById('sessions-per-day').value);
+    const kwhPerSession = parseInt(document.getElementById('kwh-per-session').value);
+    const sellingPrice = parseFloat(document.getElementById('selling-price').value);
+    const electricityCost = parseFloat(document.getElementById('electricity-cost').value);
+    const opexRent = parseFloat(document.getElementById('opex-rent').value) || 0;
+    const opexPersonnel = parseFloat(document.getElementById('opex-personnel').value) || 0;
+    const opexMaintenance = parseFloat(document.getElementById('opex-maintenance').value) || 0;
+    
+    let totalChargers = 0;
+    let equipmentCost = 0;
+
+    chargerData.forEach(c => {
+        const count = inputs[c.id];
+        totalChargers += count;
+        equipmentCost += count * c.price;
+    });
+    
+    const totalCapex = equipmentCost; // Simplified CAPEX for this tool
+    const totalKwhPerMonth = totalChargers * sessionsPerDay * kwhPerSession * 30;
+    const monthlyRevenue = totalKwhPerMonth * sellingPrice;
+    const monthlyElectricityCost = totalKwhPerMonth * electricityCost;
+    const totalOpex = monthlyElectricityCost + opexRent + opexPersonnel + opexMaintenance;
+    const monthlyProfit = monthlyRevenue - totalOpex;
+    const paybackMonths = monthlyProfit > 0 ? totalCapex / monthlyProfit : Infinity;
+    const annualRoi = totalCapex > 0 ? (monthlyProfit * 12 / totalCapex) * 100 : 0;
+
+    const details = chargerData.map(c => {
+        const count = inputs[c.id];
+        const revenue = totalChargers > 0 ? (monthlyRevenue / totalChargers) * count : 0;
+        return {...c, count, revenue};
+    });
+
+    return {
+        capex: { total: totalCapex, details },
+        revenue: { monthly: monthlyRevenue },
+        opex: { 
+            total: totalOpex, 
+            electricity: monthlyElectricityCost, 
+            rent: opexRent, 
+            personnel: opexPersonnel, 
+            maintenance: opexMaintenance 
+        },
+        profit: { monthly: monthlyProfit },
+        metrics: { paybackMonths, roi: annualRoi }
+    };
+}
+
+function updateUI() {
+    const results = calculate();
+
+    document.getElementById('kpi-capex').textContent = formatCurrency(results.capex.total);
+    document.getElementById('kpi-revenue').textContent = formatCurrency(results.revenue.monthly);
+    document.getElementById('kpi-opex').textContent = formatCurrency(results.opex.total);
+    
+    const profitElement = document.getElementById('kpi-profit');
+    profitElement.textContent = formatCurrency(results.profit.monthly);
+    profitElement.style.color = results.profit.monthly < 0 ? '#dc3545' : '#198754';
+
+    document.getElementById('kpi-payback').textContent = results.metrics.paybackMonths === Infinity ? 'N/A' : `${Math.ceil(results.metrics.paybackMonths)} tháng`;
+    document.getElementById('kpi-roi').textContent = results.metrics.paybackMonths === Infinity ? 'N/A' : `${results.metrics.roi.toFixed(2)}%`;
+
+    const tableBody = document.getElementById('investment-details-body');
+    tableBody.innerHTML = '';
+    results.capex.details.forEach(c => {
+        if (c.count > 0) {
+            const row = `
+                <tr class="border-b border-gray-200 hover:bg-gray-50">
+                    <td class="p-3">${c.name}</td>
+                    <td class="p-3 text-center">${c.count}</td>
+                    <td class="p-3 text-right">${formatCurrency(c.price)}</td>
+                    <td class="p-3 text-right">${formatCurrency(c.price * c.count)}</td>
+                    <td class="p-3 text-right">${formatCurrency(c.revenue)}</td>
+                </tr>
+            `;
+            tableBody.innerHTML += row;
+        }
+    });
+    document.getElementById('total-investment-table').textContent = formatCurrency(results.capex.total);
+    document.getElementById('total-revenue-table').textContent = formatCurrency(results.revenue.monthly);
+
+    updateCharts(results);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const chargerInputsContainer = document.getElementById('charger-inputs');
+    let currentType = '';
+    chargerData.forEach(c => {
+        if (c.type !== currentType) {
+            currentType = c.type;
+            chargerInputsContainer.innerHTML += `<h4 class="font-semibold text-gray-600 mt-4">${currentType}</h4>`;
+        }
+        const inputHtml = `
+            <div class="input-group">
+                <label for="charger-${c.id}" class="flex justify-between items-center">
+                    <span>${c.name}</span>
+                    <span class="text-xs text-gray-500">${new Intl.NumberFormat('vi-VN').format(c.price)} ₫</span>
+                </label>
+                <input type="number" id="charger-${c.id}" class="input-field charger-input" value="0" min="0" step="1">
+            </div>
+        `;
+        chargerInputsContainer.innerHTML += inputHtml;
+    });
+    
+    // Set default values from screenshot
+    document.getElementById('charger-dc20').value = 2;
+    document.getElementById('charger-dc60').value = 1;
+
+    initializeCharts();
+
+    const allInputs = document.querySelectorAll('.charger-input, .slider, .input-field, .select-field');
+    allInputs.forEach(input => input.addEventListener('input', updateUI));
+
+    const sessionsSlider = document.getElementById('sessions-per-day');
+    const sessionsValue = document.getElementById('sessions-per-day-value');
+    sessionsSlider.addEventListener('input', () => sessionsValue.textContent = sessionsSlider.value);
+
+    const kwhSlider = document.getElementById('kwh-per-session');
+    const kwhValue = document.getElementById('kwh-per-session-value');
+    kwhSlider.addEventListener('input', () => kwhValue.textContent = kwhSlider.value);
+    
+    updateUI();
+});
+</script>
+<script>
+// Chặn F12 và các phím DevTools phổ biến
+document.addEventListener('keydown', function(e) {
+    // F12
+    if (e.key === "F12" || e.keyCode === 123) {
+        e.preventDefault();
+        return false;
+    }
+    // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+    if ((e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j')) ||
+        (e.ctrlKey && (e.key === 'U' || e.key === 'u'))) {
+        e.preventDefault();
+        return false;
+    }
+});
+
+// Chặn chuột phải
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    return false;
+});
+</script>
+</body>
+</html>
