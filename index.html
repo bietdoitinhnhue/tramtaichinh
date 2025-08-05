@@ -115,12 +115,12 @@
             <div class="overflow-y-auto lg:max-h-[calc(100vh-120px)]">
                 <div class="space-y-6">
                     <div>
-                        <h3 class="font-bold text-gray-700 border-b pb-2 mb-3">Chọn Loại Trụ Sạc</h3>
+                        <h3 class="font-bold text-gray-700 border-b pb-2 mb-3">CHỌN LOẠI TRỤ SẠC</h3>
                         <div id="charger-inputs" class="space-y-4"></div>
                     </div>
 
                     <div>
-                        <h3 class="font-bold text-gray-700 border-b pb-2 mb-3">Thông Số Vận Hành</h3>
+                        <h3 class="font-bold text-gray-700 border-b pb-2 mb-3">THÔNG SỐ VẬN HÀNH</h3>
                         <div class="input-group">
                             <label for="sessions-per-day">Lượt sạc/trụ/ngày: <span id="sessions-per-day-value" class="font-bold text-blue-600">12</span></label>
                             <input type="range" min="1" max="24" value="12" class="slider" id="sessions-per-day">
@@ -174,32 +174,32 @@
                     <p id="kpi-revenue" class="text-lg sm:text-xl md:text-2xl font-bold text-green-600 mt-2">0 ₫</p>
                 </div>
                 <div class="kpi-card">
-                    <h3 class="text-gray-600 font-semibold text-xs sm:text-sm">Chi Phí Vận Hành/Tháng</h3>
+                    <h3 class="text-gray-600 font-semibold text-xs sm:text-sm">Chi phí vận hành/tháng</h3>
                     <p id="kpi-opex" class="text-lg sm:text-xl md:text-2xl font-bold text-red-600 mt-2">0 ₫</p>
                 </div>
                 <div class="kpi-card">
-                    <h3 class="text-gray-600 font-semibold text-xs sm:text-sm">Lợi Nhuận/Tháng</h3>
+                    <h3 class="text-gray-600 font-semibold text-xs sm:text-sm">Lợi nhuận/tháng</h3>
                     <p id="kpi-profit" class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mt-2">0 ₫</p>
                 </div>
                 <div class="kpi-card">
-                    <h3 class="text-gray-600 font-semibold text-xs sm:text-sm">Thời Gian Hoàn Vốn</h3>
+                    <h3 class="text-gray-600 font-semibold text-xs sm:text-sm">Thời gian hoàn vốn</h3>
                     <p id="kpi-payback" class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mt-2">N/A</p>
                 </div>
                 <div class="kpi-card">
-                    <h3 class="text-gray-600 font-semibold text-xs sm:text-sm">ROI Hàng Năm</h3>
+                    <h3 class="text-gray-600 font-semibold text-xs sm:text-sm">Tỷ suất lợi nhuận hằng năm</h3>
                     <p id="kpi-roi" class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mt-2">N/A</p>
                 </div>
             </div>
             
             <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
                 <div class="output-card">
-                    <h3 class="text-lg font-bold text-center mb-4">Cơ Cấu Chi Phí Vận Hành</h3>
+                    <h3 class="text-lg font-bold text-center mb-4">Cơ cấu chi phí vận hành</h3>
                     <div class="chart-container">
                         <canvas id="opexChart"></canvas>
                     </div>
                 </div>
                 <div class="output-card">
-                    <h3 class="text-lg font-bold text-center mb-4">Doanh Thu vs Chi Phí</h3>
+                    <h3 class="text-lg font-bold text-center mb-4">Doanh thu vs chi phí</h3>
                     <div class="chart-container">
                         <canvas id="financeChart"></canvas>
                     </div>
@@ -207,15 +207,15 @@
             </div>
 
             <div class="output-card">
-                 <h3 class="text-lg font-bold mb-4">Chi Tiết Đầu Tư Theo Loại Trụ</h3>
+                 <h3 class="text-lg font-bold mb-4">CHI TIẾT ĐẦU TƯ THEO LOẠI TRỤ</h3>
                  <div class="overflow-x-auto">
                     <table class="w-full text-left text-sm">
                         <thead class="table-header">
                             <tr>
-                                <th class="p-3 font-semibold">Loại Trụ</th>
-                                <th class="p-3 font-semibold text-center">Số Lượng</th>
-                                <th class="p-3 font-semibold text-right">Đơn Giá</th>
-                                <th class="p-3 font-semibold text-right">Tổng Tiền</th>
+                                <th class="p-3 font-semibold">LOẠI TRỤ</th>
+                                <th class="p-3 font-semibold text-center">SỐ LƯỢNG</th>
+                                <th class="p-3 font-semibold text-right">ĐƠN GIÁ</th>
+                                <th class="p-3 font-semibold text-right">TỔNG TIỀN</th>
                                 <th class="p-3 font-semibold text-right">Doanh Thu/Tháng</th>
                             </tr>
                         </thead>
@@ -461,6 +461,7 @@ document.addEventListener('contextmenu', function(e) {
 </script>
 </body>
 </html>
+
 
 
 
