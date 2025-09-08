@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ĐẤT NỀN DÒNG TIỀN - Biến đất thành thu nhập</title>
+<meta name="description" content="Giải pháp khai thác dòng tiền cho chủ đất: tư vấn mô hình cho thuê, tối ưu lấp đầy & thanh khoản, pháp lý minh bạch." />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* ==================================
+   CSS ĐÃ TỐI ƯU HÓA RESPONSIVE
+   ================================== */
+:root{
+  --bg:#0b0e12; --bg-2:#0e1116;
+  --text:#eaf2ff; --muted:#9aa4b2;
+  --gold:#ffd166; --gold-2:#f7b801; --blue:#22c1ff; --blue-2:#7dd3fc;
+  --ok:#8ff7b2; --warn:#ffb347; --line:#1f2937;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:radial-gradient(1200px 1200px at 75% -20%, #13233a 0%, #0b0e12 60%);color:var(--text);line-height:1.6}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:1200px;margin:auto;padding:0 clamp(14px,5vw,48px)}
+a{color:var(--gold);text-decoration:none}
+.tag{letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-size:.78rem}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:#0b0e12f2;backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(180deg,var(--gold),var(--gold-2));color:#111;font-weight:800}
+.brand h1{font-size:1rem;margin:0;color:var(--gold)}
+.links a{margin-left:10px;padding:8px 12px;border-radius:999px;border:1px solid transparent;font-size:.92rem;transition: border-color .2s ease}
+.links a:hover{border-color:var(--gold)}
+.menu-toggle{display:none}
+
+/* Hero */
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px, 5vw, 48px);padding:clamp(32px, 8vw, 42px) 0 18px;align-items:center}
+.title{font-size:clamp(28px,4vw,44px);line-height:1.2;margin:.4rem 0 1rem}
+.title .hl{background:linear-gradient(180deg,var(--gold),var(--gold-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:#d9e2ef;max-width:62ch}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;border:1px solid var(--gold);color:var(--gold);font-weight:700;transition:.25s;background:transparent;text-align:center}
+.btn:hover{background:var(--gold);color:#111;transform:translateY(-2px)}
+
+/* CTA HERO (fix blur) */
+.cta-hero{
+  background:linear-gradient(90deg,var(--blue),var(--gold) 60%,var(--gold-2));
+  color:#0b0e12;
+  border:none;border-radius:999px;padding:14px 28px;
+  font-weight:800; letter-spacing:.3px; line-height:1;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-rendering:optimizeLegibility;
+  box-shadow:0 10px 26px #22c1ff44,inset 0 -2px 0 #0004;
+  cursor:pointer; position:relative; overflow:hidden;
+  transition:transform .2s ease,filter .2s ease;
+  display:inline-flex; align-items:center; justify-content:center;
+}
+.cta-hero .cta-label{position:relative; z-index:2}
+.cta-hero:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.cta-hero::after{
+  content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(120deg,#fff8 0,#fff0 35% 65%,#fff6 100%);
+  transform:translateX(-120%); transition:transform .6s ease;
+}
+.cta-hero:hover::after{transform:translateX(120%)}
+.pulse{animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #f7b80155}70%{box-shadow:0 0 0 14px #f7b80100}100%{box-shadow:0 0 0 0 #f7b80100}}
+.hero-card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#10131a,#0d1117)}
+.hero-card img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+
+/* Sections */
+.section{padding:clamp(32px, 8vw, 42px) 0}
+h2.section-title{font-size:clamp(24px,3.5vw,32px);margin:0 0 24px;color:var(--gold)}
+
+
+/* Quote / benefits */
+.quote{background:linear-gradient(180deg,#0e141b,#0b0f15);border:1px solid var(--line);border-radius:18px;padding:clamp(18px, 4vw, 24px)}
+.quote h3{margin:0 0 16px;font-size:clamp(18px,2.4vw,24px)}
+.benefits{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:16px}
+.benefit{display:flex;gap:14px;align-items:flex-start;background:#0c1219;border:1px solid var(--line);border-radius:14px;padding:16px}
+.benefit .ico{font-size:22px;margin-top:2px}
+.benefit b{display:block}
+
+/* Blueprint */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{background:linear-gradient(180deg,#0f131a,#0b0f15);border:1px solid var(--line);border-radius:16px;padding:clamp(18px, 4vw, 24px)}
+ul.clean{margin:0;padding-left:20px;color:#ced6e2;display:flex;flex-direction:column;gap:8px;}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:#0c1117;border:1px solid var(--line);border-radius:12px;padding:16px}
+.idx{display:inline-block;padding:4px 10px;border-radius:999px;font-weight:800;color:#111;background:linear-gradient(180deg,var(--gold),var(--gold-2));margin-bottom:8px}
+
+/* Center the "ĐỪNG MUA ĐẤT..." block */
+#blueprint .section-title{text-align:center}
+#blueprint .grid-2{grid-template-columns:1fr}
+#blueprint .panel{max-width:900px;margin:0 auto}
+
+/* Case cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px}
+.card{background:linear-gradient(180deg,#0e131a,#0b1015);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #00000088}
+.card-body{padding:16px}
+.card-body h4{margin:0 0 6px;color:var(--gold)}
+.meta{color:var(--muted);font-size:.92rem}
+
+/* Project grid (4 blocks) */
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:20px}
+.p-card{background:linear-gradient(180deg,#0e131a,#0b1015);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.25s}
+.p-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #00000088}
+.p-card img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.p-body{padding:16px}
+.p-body h4{margin:0 0 6px;color:var(--gold)}
+.p-meta{color:#9aa4b2;font-size:.9rem}
+.p-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.chip{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid #2a3442;background:#0a1016;color:#dbe6f5;font-size:.78rem}
+.p-cta{display:flex;justify-content:space-between;align-items:center;margin-top:12px;gap:12px}
+.p-cta .btn{padding:8px 14px;font-size:0.85rem}
+
+/* Tools (2 columns) */
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
+/* Inputs */
+label{display:block;font-size:.9rem;color:#dbe6f5;margin:10px 0 6px}
+input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #2a3442;background:#0a1016;color:#eef6ff;outline:none;transition:.2s;font-size:1rem}
+input::placeholder, textarea::placeholder{color:#657186}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px #f7b80122}
+.calc-btn{width:100%;margin-top:16px;padding:14px}
+.result{margin-top:16px;background:#0d1a12;border:1px solid #284735;color:#c9f5d5;border-radius:12px;padding:14px;line-height:1.7}
+.result b{color:var(--ok)}
+
+/* WHY compact (3 bullets) */
+.tick{display:flex;gap:12px;align-items:flex-start;background:#0b1015;border:1px solid #1f2937;border-radius:12px;padding:14px;margin-bottom:12px}
+.tick:last-child{margin-bottom:0}
+.tick .dot{flex-shrink:0;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,var(--gold),var(--gold-2));color:#111;font-weight:900}
+
+/* Floating side buttons */
+.float-wrap{position:fixed;right:16px;bottom:18px;z-index:80;display:flex;flex-direction:column;gap:10px}
+.fbtn{display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;color:#111;font-weight:800;text-decoration:none;box-shadow:0 4px 12px #00000044;transition:transform .2s ease, filter .2s ease}
+.fbtn.call{background:linear-gradient(180deg,#4ade80,#22c55e)}
+.fbtn.zalo{background:linear-gradient(180deg,#60a5fa,#22c1ff)}
+.fbtn:hover{filter:brightness(1.05);transform:translateY(-2px)}
+.fbtn .emoji{font-size:18px}
+
+/* Footer */
+footer{border-top:1px solid var(--line);background:#080b10}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding:24px 0;color:var(--muted)}
+.badge{display:inline-block;border:1px solid var(--line);background:#0c1117;padding:8px 12px;border-radius:999px}
+
+/* ====== Responsive tweaks ====== */
+@media (max-width:960px){ .tools{grid-template-columns:1fr} }
+@media (max-width:768px){
+  .hero-grid{grid-template-columns:1fr;gap:24px}
+  .grid-2{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .float-wrap{right:12px;bottom:12px}
+  .menu-toggle{display:block;background:none;border:none;color:var(--text);font-size:28px;cursor:pointer;z-index:100}
+  .links{display:flex;flex-direction:column;position:fixed;inset:0;padding-top:80px;background:var(--bg);transform:translateX(100%);transition:transform .3s ease-in-out}
+  .links.active{transform:translateX(0)}
+  .links a{font-size:1.2rem;padding:16px;text-align:center;width:100%;margin-left:0;border-radius:0}
+  .links a.badge{background:var(--gold);color:var(--bg);margin-top:10px}
+}
+@media (max-width:480px){
+  .steps{grid-template-columns:1fr}
+  .cta-hero, .btn{width:100%;text-align:center;padding:14px}
+  .hero-card img{aspect-ratio:16/10}
+  .tick{padding:12px}
+  .panel{padding:16px}
+  .foot{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">₫</div>
+      <h1>ĐẤT NỀN DÒNG TIỀN</h1>
+    </div>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Mở menu">☰</button>
+    <nav class="links">
+      <a href="#duan">Dự án</a>
+      <a href="#tools">Công cụ</a>
+      <a href="#cta" class="badge">Đăng ký tư vấn</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="tag">Giải pháp cho chủ đất đã mua</div>
+        <h2 class="title">Đất nền <span class="hl">không chỉ để giữ</span> - hãy để chúng tôi biến thành <span class="hl">dòng tiền tự động</span>.</h2>
+        <p class="lead">Tư vấn mô hình cho thuê phù hợp khu vực, tối ưu lấp đầy & chuẩn hóa hồ sơ dòng tiền để dễ chốt giao dịch khi cần.</p>
+        <div class="btns">
+          <a class="cta-hero pulse" href="#cta"><span class="cta-label">NHẬN TƯ VẤN MIỄN PHÍ NGAY</span></a>
+          <a class="btn" href="#tools">Dùng công cụ tính</a>
+        </div>
+      </div>
+      <div class="hero-card"><img src="https://images.unsplash.com/photo-1600573472591-ee6c8e69565a?q=80&w=1200&auto=format&fit=crop" alt="Hero"></div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story" class="container section">
+    <div class="quote">
+      <h3>“Ở đây, câu chuyện không chỉ là mua và chờ tăng giá. Đó là câu chuyện về việc <span style="color:var(--gold)">tư vấn giải pháp khai thác dòng tiền</span> từ chính bất động sản chúng tôi cung cấp.”</h3>
+      <div class="benefits">
+        <div class="benefit"><div class="ico">💼</div><div><b>Tối Ưu Dòng Tiền</b> Mô hình phù hợp: trọ công nhân, kho mini, Kiot dịch vụ…</div></div>
+        <div class="benefit"><div class="ico">📈</div><div><b>Tăng Thanh Khoản</b> Tài sản đang sinh tiền luôn hấp dẫn và dễ chốt.</div></div>
+        <div class="benefit"><div class="ico">🛡️</div><div><b>An Toàn & Bền Vững</b> Giảm phụ thuộc biến động thị trường, tạo thu nhập ổn định.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLUEPRINT (giữ 1 khối) -->
+  <section id="blueprint" class="container section">
+    <h2 class="section-title">ĐỪNG MUA ĐẤT CHỈ TRÔNG ĐỢI NÓ LÊN GIÁ RỒI BÁN</h2>
+    <div class="grid-2">
+      <div class="panel">
+        <h3 style="margin:0 0 10px">Vấn đề & Khát vọng</h3>
+        <ul class="clean">
+          <li>Mua đất rồi để đó → vốn chết, cơ hội trôi qua.</li>
+          <li>Thiếu phương án cho thuê & sợ rủi ro pháp lý/chi phí.</li>
+          <li>Mong muốn: tiền về hằng tháng, khi cần bán dễ chốt giá tốt.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASES -->
+  <section class="container section">
+    <h2 class="section-title">Case study nổi bật</h2>
+    <div class="cards">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop" alt="">
+        <div class="card-body">
+          <h4>Bến Cát – 180m² → 10 phòng</h4>
+          <div class="meta">CAPEX 320tr • Thu ròng ~15tr/tháng • Hoàn vốn ~22 tháng</div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop" alt="">
+        <div class="card-body">
+          <h4>Thủ Dầu Một – kho mini 120m²</h4>
+          <div class="meta">CAPEX 180tr • Thu ròng ~9tr/tháng • Hoàn vốn ~20 tháng</div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1200&auto=format&fit=crop" alt="">
+        <div class="card-body">
+          <h4>Dầu Tiếng – Kiot dịch vụ</h4>
+          <div class="meta">CAPEX 90tr • Thu ròng ~6tr/tháng • Hoàn vốn ~15 tháng</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="duan" class="container section">
+    <h2 class="section-title">Dự án tiêu biểu</h2>
+    <div class="project-grid">
+      <article class="p-card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop" alt="Thủ Dầu Một">
+        <div class="p-body">
+          <h4>Đất nền Thủ Dầu Một</h4>
+          <div class="p-meta">Quy mô: 10–20 lô • 80–120m² • Hạ tầng hoàn thiện</div>
+          <div class="p-tags"><span class="chip">Sổ riêng</span><span class="chip">Quy hoạch rõ</span><span class="chip">Gần KCN</span></div>
+          <div class="p-cta"><span class="p-meta">Khai thác: trọ/kho/kiot</span><a class="btn" href="#cta">LIÊN HỆ</a></div>
+        </div>
+      </article>
+      <article class="p-card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1200&auto=format&fit=crop" alt="Dầu Tiếng">
+        <div class="p-body">
+          <h4>Đất nền Dầu Tiếng</h4>
+          <div class="p-meta">8–12 lô • 100–150m² • Trục đường lớn</div>
+          <div class="p-tags"><span class="chip">Pháp lý chuẩn</span><span class="chip">Gần chợ</span><span class="chip">Khai thác ổn</span></div>
+          <div class="p-cta"><span class="p-meta">Kiot/dịch vụ</span><a class="btn" href="#cta">Nhận thông tin</a></div>
+        </div>
+      </article>
+      <article class="p-card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop" alt="Bến Cát">
+        <div class="p-body">
+          <h4>Đất nền Bến Cát</h4>
+          <div class="p-meta">15+ lô • 70–100m² • Gần QL13 & KCN</div>
+          <div class="p-tags"><span class="chip">Sổ sẵn</span><span class="chip">Điện nước đủ</span><span class="chip">Dễ cho thuê</span></div>
+          <div class="p-cta"><span class="p-meta">Trọ/căn hộ mini</span><a class="btn" href="#cta">Giữ chỗ</a></div>
+        </div>
+      </article>
+      <article class="p-card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1200&auto=format&fit=crop" alt="TP Mới">
+        <div class="p-body">
+          <h4>Đất nền TP Mới</h4>
+          <div class="p-meta">12–18 lô • 90–130m² • Tiện ích hoàn chỉnh</div>
+          <div class="p-tags"><span class="chip">Pháp lý minh bạch</span><span class="chip">Quy hoạch chuẩn</span><span class="chip">Thanh khoản tốt</span></div>
+          <div class="p-cta"><span class="p-meta">Văn phòng/Kiot</span><a class="btn" href="#cta">Tư vấn nhanh</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section id="tools" class="container section">
+    <h2 class="section-title" style="text-align:center">Công cụ hoạch định tài chính</h2>
+    <div class="tools">
+      <div class="panel">
+        <h3 style="margin:0 0 6px">Tính hiệu quả đầu tư (gộp giá trị BĐS)</h3>
+        <div class="grid-2" style="gap:12px">
+          <div><label>Loại tài sản</label><select id="iv_type"><option>Đất</option><option>Nhà</option></select></div>
+          <div><label>Giá trị tài sản hiện tại (VNĐ)</label><input id="iv_asset" value="1500000000"></div>
+        </div>
+        <div class="grid-2" style="gap:12px">
+          <div><label>CAPEX xây dựng/cải tạo (VNĐ)</label><input id="iv_capex" value="300000000"></div>
+          <div><label>Giá dự kiến khai thác/tháng (VNĐ)</label><input id="iv_rent_gross" value="15000000"></div>
+        </div>
+        <div class="grid-2" style="gap:12px">
+          <div><label>Chi phí vận hành/tháng (VNĐ)</label><input id="iv_opex" value="3000000"></div>
+          <div><label>Tỉ lệ trống (%)</label><input id="iv_vac" value="10"></div>
+        </div>
+        <div class="grid-2" style="gap:12px">
+          <div><label>Tăng giá dự kiến (%/năm)</label><input id="iv_app" value="8"></div>
+          <div><label>Thời gian nắm giữ (năm)</label><input id="iv_years" value="5"></div>
+        </div>
+        <button class="btn calc-btn" id="iv_btn" type="button">Tính toán</button>
+        <div class="result" id="iv_out" style="display:none"></div>
+      </div>
+
+      <div class="panel">
+        <h3 style="margin:0 0 6px">Tính lãi suất vay</h3>
+        <label>Số tiền vay (VNĐ)</label><input id="ln_amount" value="800000000">
+        <label>Lãi suất (%/năm)</label><input id="ln_rate" value="9.5">
+        <label>Thời hạn vay (năm)</label><input id="ln_years" value="20">
+        <button class="btn calc-btn" id="ln_btn" type="button">Tính toán</button>
+        <div class="result" id="ln_out" style="display:none"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why" class="container section">
+    <h2 class="section-title">Tại sao lại lựa chọn ĐẤT NỀN DÒNG TIỀN?</h2>
+    <div class="panel">
+      <div class="tick"><div class="dot">✓</div>
+        <div><b>Pháp lý rõ ràng, minh bạch.</b><br>Sổ riêng/đất ở theo từng lô; kiểm tra quy hoạch, chỉ giới & hạ tầng; hợp đồng & nghĩa vụ đầy đủ.</div>
+      </div>
+      <div class="tick"><div class="dot">✓</div>
+        <div><b>Đồng hành tối ưu & thanh khoản.</b><br>Biến lô đất thành <i>tài sản sinh tiền</i>: tư vấn mô hình, nâng công suất lấp đầy, chuẩn hóa hồ sơ dòng tiền để <b>dễ chốt giao dịch</b>.</div>
+      </div>
+      <div class="tick"><div class="dot">✓</div>
+        <div><b>Kết nối đối tác hỗ trợ triển khai.</b><br>Thiết kế, thi công nhẹ, điện nước, PCCC, vận hành cho thuê & ngân hàng – triển khai nhanh, chi phí chuẩn.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FORM -->
+  <section id="cta" class="container section">
+    <div class="grid-2">
+      <div class="panel">
+        <h2 class="section-title">TƯ VẤN MIỄN PHÍ</h2>
+        <p class="note">Điền thông tin - chúng tôi sẽ gọi lại trong 24h để khảo sát & đề xuất phương án phù hợp.</p>
+        <form id="lead" novalidate>
+          <div class="grid-2" style="gap:10px">
+            <div><label>Họ và tên *</label><input id="name" required placeholder="Nguyễn Văn A"></div>
+            <div><label>SĐT/Zalo *</label><input id="phone" required pattern="^[0-9+ ()-]{8,}$" placeholder="09xx xxx xxx"></div>
+          </div>
+          <div class="grid-2" style="gap:10px">
+            <div><label>Email</label><input id="email" type="email" placeholder="you@email.com"></div>
+            <div><label>Tài chính *</label>
+              <select id="need" required>
+                <option value="">- Chọn -</option>
+                <option>Dưới 1 tỷ</option>
+                <option>1 - 3 tỷ</option>
+                <option>Trên 3 tỷ</option>
+              </select>
+            </div>
+          </div>
+          <label>Thông tin tài sản</label>
+          <textarea id="msg" rows="4" placeholder="Vị trí/diện tích, pháp lý, ngân sách cải tạo, thời gian mong muốn…"></textarea>
+          <div class="btns" style="justify-content:space-between;margin-top:10px">
+            <span class="note">Bằng cách gửi, bạn đồng ý để chúng tôi liên hệ tư vấn.</span>
+            <button class="cta-hero pulse" type="submit"><span class="cta-label">ĐĂNG KÝ NGAY</span></button>
+          </div>
+          <div id="ok" class="success" style="display:none;color:var(--ok);font-weight:700;margin-top:10px">✅ Đã nhận thông tin! Chúng tôi sẽ liên hệ sớm.</div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h3 style="margin:0 0 8px">Thông tin liên hệ</h3>
+        <div class="tick"><div class="dot">☎</div><div><b>Hotline:</b> 0968.3333.42</div></div>
+        <div class="tick"><div class="dot">🏢</div><div><b>Văn phòng:</b> 426 Phạm Ngọc Thạch, Bình Dương, TP.HCM</div></div>
+        <div class="tick"><div class="dot">⏰</div><div><b>Giờ làm việc:</b> T2–T6 8:00–17:00 • T7 8:00–12:00</div></div>
+        <div class="tick"><div class="dot">🌐</div><div><b>Website</b> Datnendongtien.vn</div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <div>
+      <span class="badge">ĐẤT NỀN DÒNG TIỀN</span>
+      <p>Đồng hành để đất của bạn sinh tiền – minh bạch & an toàn.</p>
+    </div>
+    <div style="text-align:right">
+      <a class="badge" href="#cta">Đăng ký tư vấn</a>
+      <p>© 2025 Datnendongtien.vn</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating side buttons -->
+<div class="float-wrap">
+  <a class="fbtn call" href="tel:0968333342" aria-label="Gọi ngay"><span class="emoji">📞</span> Gọi ngay</a>
+  <a class="fbtn zalo" href="https://zalo.me/0968333342" target="_blank" rel="noopener" aria-label="Zalo"><span class="emoji">💬</span> Zalo</a>
+</div>
+
+<script>
+// =====================
+// Config Telegram (điền của bạn vào đây)
+// =====================
+const TELEGRAM_BOT_TOKEN = '8243544491:AAEAidQ5zGxeqj8cOXTRbYmo7JBQ5B75ss8';         // ví dụ: '1234567890:ABCDEF...'
+const TELEGRAM_CHAT_ID   = '-1002943111926';              // ID group (âm), ví dụ: '-100xxxxxxxxxx'
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.links');
+menuToggle?.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+});
+
+// Helpers
+const fmt = n => (isFinite(n)? n.toLocaleString('vi-VN') : '-');
+
+// Investment calculator
+document.getElementById('iv_btn')?.addEventListener('click', ()=>{
+  const asset  = +document.getElementById('iv_asset').value||0;
+  const capex  = +document.getElementById('iv_capex').value||0;
+  const rentG  = +document.getElementById('iv_rent_gross').value||0;
+  const opex   = +document.getElementById('iv_opex').value||0;
+  const vac    = Math.min(Math.max(+document.getElementById('iv_vac').value||0,0),100);
+  const appY   = (+document.getElementById('iv_app').value||0)/100;
+  const years  = +document.getElementById('iv_years').value||0;
+
+  const totalCapital = asset + capex;
+  const grossEff     = rentG * (1 - vac/100);
+  const netMonth     = Math.max(grossEff - opex,0);
+  const netYear      = netMonth * 12;
+  const cashflowAll  = netYear * years;
+  const futureValue  = totalCapital * Math.pow(1+appY, years);
+  const totalGain    = (futureValue - totalCapital) + cashflowAll;
+  const roiAnnual    = years>0 ? Math.pow(1 + totalGain/Math.max(totalCapital,1), 1/years) - 1 : 0;
+  const capOnCost    = totalCapital>0 ? (netYear/totalCapital) : NaN;
+  const capOnAsset   = asset>0 ? (netYear/asset) : NaN;
+
+  const paybackMonths = netMonth>0 ? (capex / netMonth) : Infinity;
+  const paybackYears  = isFinite(paybackMonths) ? (paybackMonths/12) : Infinity;
+  const compareLabel  = isFinite(paybackYears)
+    ? `${paybackYears.toFixed(1)} năm / ${years} năm - ${(years>0 && paybackYears<=years) ? 'Trong kỳ' : 'Vượt kỳ'}`
+    : '-';
+
+  const out = document.getElementById('iv_out'); out.style.display='block';
+  out.innerHTML =
+    `<b>Tổng vốn sau đầu tư:</b> ${fmt(totalCapital)} đ<br>
+     <b>Dòng tiền ròng/tháng:</b> ${fmt(Math.round(netMonth))} đ<br>
+     <b>Cap rate (trên tổng vốn):</b> ${isFinite(capOnCost)?(capOnCost*100).toFixed(2):'-'}%/năm<br>
+     <b>Cap rate (trên giá trị tài sản):</b> ${isFinite(capOnAsset)?(capOnAsset*100).toFixed(2):'-'}%/năm<br>
+     <b>Dòng tiền tích lũy ${years} năm:</b> ${fmt(cashflowAll)} đ<br>
+     <b>Giá trị tài sản tương lai:</b> ${fmt(futureValue)} đ<br>
+     <b>Tổng lợi nhuận:</b> ${fmt(totalGain)} đ<br>
+     <b>ROI bình quân năm:</b> ${isFinite(roiAnnual)?(roiAnnual*100).toFixed(2):'-'}%<br>
+     <b>Giá trị so với Thời gian nắm giữ (năm):</b> ${compareLabel}`;
+});
+
+// Loan calculator
+document.getElementById('ln_btn')?.addEventListener('click', ()=>{
+  const P = +document.getElementById('ln_amount').value||0;
+  const rY= (+document.getElementById('ln_rate').value||0)/100;
+  const N = (+document.getElementById('ln_years').value||0)*12;
+  const r = rY/12;
+  const A = r===0 ? P/N : P*r*Math.pow(1+r,N)/(Math.pow(1+r,N)-1);
+  const totalPay = A*N, interest = totalPay-P;
+  const out = document.getElementById('ln_out'); out.style.display='block';
+  out.innerHTML = `<b>Trả góp/tháng:</b> ${fmt(Math.round(A))} đ<br>
+                   <b>Tổng lãi phải trả:</b> ${fmt(Math.round(interest))} đ<br>
+                   <b>Tổng phải trả:</b> ${fmt(Math.round(totalPay))} đ`;
+});
+
+// Lead form -> Telegram
+document.getElementById('lead').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const f = e.target;
+  if(!f.checkValidity()){ f.reportValidity(); return; }
+
+  const name  = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const need  = document.getElementById('need').value;
+  const msg   = document.getElementById('msg').value.trim();
+
+  const submitBtn = f.querySelector('.cta-hero');
+  const original  = submitBtn.innerHTML;
+  submitBtn.disabled = true;
+  submitBtn.innerText = 'Đang gửi...';
+
+  // Soạn message (HTML)
+  const text =
+    `<b>📥 LEAD MỚI - ĐẤT NỀN DÒNG TIỀN</b>\n` +
+    `👤 <b>Họ tên:</b> ${name}\n` +
+    `📞 <b>Điện thoại/Zalo:</b> ${phone}\n` +
+    (email ? `✉️ <b>Email:</b> ${email}\n` : '') +
+    `💳 <b>Tài chính:</b> ${need}\n` +
+    (msg ? `📝 <b>Nội dung:</b> ${msg}\n` : '') +
+    `⏰ <i>${new Date().toLocaleString('vi-VN')}</i>`;
+
+  try{
+    const resp = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        chat_id: TELEGRAM_CHAT_ID,
+        text,
+        parse_mode:'HTML',
+        disable_web_page_preview:true
+      })
+    });
+
+    if(!resp.ok) throw new Error('Telegram API error');
+
+    document.getElementById('ok').style.display='block';
+    f.reset();
+    document.getElementById('ok').scrollIntoView({behavior:'smooth',block:'center'});
+  }catch(err){
+    alert('Gửi không thành công. Vui lòng thử lại hoặc liên hệ hotline!');
+    console.error(err);
+  }finally{
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = original;
+  }
+});
+</script>
+</body>
+</html>
