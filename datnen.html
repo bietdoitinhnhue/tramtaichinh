@@ -197,6 +197,22 @@ footer{border-top:1px solid var(--line);background:#080b10}
   .panel{padding:16px}
   .foot{flex-direction:column;text-align:center}
 }
+/* Mobile: căn giữa nút footer */
+@media (max-width:768px){
+  footer .foot{
+    flex-direction:column;
+    text-align:center;
+  }
+  footer .foot > div{
+    width:100%;
+    text-align:center !important;
+  }
+  footer .foot a.badge{
+    display:inline-block;
+    margin:auto;
+  }
+}
+
 </style>
 
 <!-- ===== Schema.org FAQ for AI/SEO (không hiển thị ra UI) ===== -->
