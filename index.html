@@ -430,7 +430,7 @@ class="flex-shrink-0 ml-auto px-3 py-2 text-sm sm:px-4 sm:py-2 bg-accent-blue te
         <div class="bg-white rounded-xl shadow-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto transform transition-all">
             <!-- Header Modal -->
             <div class="p-4 sm:p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white rounded-t-xl">
-                <h2 class="text-lg sm:text-2xl font-bold text-text-dark">CÁC GÓI VAY ƯU ĐÃI PHÙ HỢP VỚI BẠN</h2>
+                <h2 class="text-lg sm:text-2xl font-bold text-text-dark"><h2>CÁC GIẢI PHÁP TÀI CHÍNH PHÙ HỢP VỚI HỒ SƠ CỦA BẠN</h2>
                 <button onclick="closeOfferModal()" class="text-gray-400 hover:text-gray-700 transition duration-150">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
@@ -537,7 +537,7 @@ class="flex-shrink-0 ml-auto px-3 py-2 text-sm sm:px-4 sm:py-2 bg-accent-blue te
                             <p><span class="font-semibold text-text-dark">Kỳ Hạn:</span> 3 - 36 Tháng</p>
                         </div>
                         <button onclick="openDetailModal('VayMeo')" class="cta-yellow-button w-full mt-4 py-2 text-base rounded-full text-white font-semibold shadow-md">
-                            Xem Các Lựa Chọn Của Bạn
+                            XEM CHI TIẾT
                         </button>
                     </div>
 
@@ -553,7 +553,7 @@ class="flex-shrink-0 ml-auto px-3 py-2 text-sm sm:px-4 sm:py-2 bg-accent-blue te
                             <p><span class="font-semibold text-text-dark">Kỳ Hạn:</span> 3 - 36 Tháng</p>
                         </div>
                         <button onclick="openDetailModal('Cashspace')" class="cta-yellow-button w-full mt-4 py-2 text-base rounded-full text-white font-semibold shadow-md">
-                            Xem Các Lựa Chọn Của Bạn
+                            XEM CHI TIẾT
                         </button>
                     </div>
 
@@ -569,7 +569,7 @@ class="flex-shrink-0 ml-auto px-3 py-2 text-sm sm:px-4 sm:py-2 bg-accent-blue te
                             <p><span class="font-semibold text-text-dark">Kỳ Hạn:</span> 3 - 36 Tháng</p>
                         </div>
                         <button onclick="openDetailModal('F88')" class="cta-yellow-button w-full mt-4 py-2 text-base rounded-full text-white font-semibold shadow-md">
-                            Xem Các Lựa Chọn Của Bạn
+                            XEM CHI TIẾT
                         </button>
                     </div>
 
@@ -584,7 +584,7 @@ class="flex-shrink-0 ml-auto px-3 py-2 text-sm sm:px-4 sm:py-2 bg-accent-blue te
                             <p><span class="font-semibold text-text-dark">Kỳ Hạn:</span> 3 - 36 Tháng</p>
                         </div>
                         <button onclick="openDetailModal('Crezu')" class="cta-yellow-button w-full mt-4 py-2 text-base rounded-full text-white font-semibold shadow-md">
-                            Xem Các Lựa Chọn Của Bạn
+                            XEM CHI TIẾT
                         </button>
                     </div>
 
@@ -599,7 +599,7 @@ class="flex-shrink-0 ml-auto px-3 py-2 text-sm sm:px-4 sm:py-2 bg-accent-blue te
                             <p><span class="font-semibold text-text-dark">Kỳ Hạn:</span> 3 - 36 Tháng</p>
                         </div>
                         <button onclick="openDetailModal('FinZone')" class="cta-yellow-button w-full mt-4 py-2 text-base rounded-full text-white font-semibold shadow-md">
-                            Xem Các Lựa Chọn Của Bạn
+                            XEM CHI TIẾT
                         </button>
                     </div>
                 </div>
@@ -639,7 +639,7 @@ class="flex-shrink-0 ml-auto px-3 py-2 text-sm sm:px-4 sm:py-2 bg-accent-blue te
         <div class="bg-white rounded-xl shadow-3xl w-full max-w-lg max-h-[90vh] overflow-y-auto transform transition-all">
             <!-- Header Modal -->
             <div class="p-4 sm:p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white rounded-t-xl">
-                <h2 class="text-lg sm:text-2xl font-bold text-text-dark">Chi tiết ưu đãi gói vay</h2>
+                <h2 class="text-lg sm:text-2xl font-bold text-text-dark">CHI TIẾT GIẢI PHÁP TÀI CHÍNH CHO BẠN</h2>
                 <button onclick="closeDetailModal()" class="text-gray-400 hover:text-gray-700 transition duration-150">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
@@ -862,7 +862,7 @@ class="flex-shrink-0 ml-auto px-3 py-2 text-sm sm:px-4 sm:py-2 bg-accent-blue te
             // Cập nhật nội dung modal
             detailLenderName.textContent = lenderName;
             detailAmount.textContent = data.amount;
-            detailRate.textContent = data.rate + "/tháng"; 
+            detailRate.textContent = data.rate; 
             
             // GÁN LINK RIÊNG BIỆT TỪ DỮ LIỆU VÀO NÚT CTA
             detailCtaLink.href = data.link; 
