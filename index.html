@@ -234,7 +234,7 @@
                 <!-- Tên thương hiệu -->
                 <div class="text-xl font-bold text-accent-blue leading-none">
                     <span class="hidden sm:inline">TRẠM TÀI CHÍNH</span>
-                    <span class="sm:hidden">TTC</span>
+                    <span class="sm:hidden">TRẠM TÀI CHÍNH</span>
                 </div>
             </a>
             
@@ -244,7 +244,7 @@
         </div>
     </nav>
 
-    <!-- 1. HERO SECTION & CALCULATOR (Phần đầu trang & Công cụ tính nhanh) -->
+<!-- 1. HERO SECTION & CALCULATOR (Phần đầu trang & Công cụ tính nhanh) -->
     <header class="py-12 md:py-20 max-w-7xl mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center gap-10">
             <!-- Văn bản chính (ĐÃ CẬP NHẬT CONTENT) -->
@@ -424,209 +424,206 @@
         </div>
     </footer>
 
-   <!-- MODAL 1: LOAN OFFERS (Ưu đãi vay cá nhân hóa) -->
-<div id="offer-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-backdrop">
-    <div class="bg-white rounded-xl shadow-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto transform transition-all">
-        <!-- Header Modal -->
-        <div class="p-4 sm:p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white rounded-t-xl">
-            <h2 class="text-lg sm:text-2xl font-bold text-text-dark">Ưu Đãi Vay Cá Nhân Hóa Của Bạn</h2>
-            <button onclick="closeOfferModal()" class="text-gray-400 hover:text-gray-700 transition duration-150">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-        </div>
-        
-        <!-- Nội dung chính Modal -->
-        <div class="p-4 sm:p-6">
-            <!-- Thông tin khoản vay ước tính -->
-            <p class="mb-4 text-sm sm:text-base font-semibold text-text-secondary">Dựa trên khoản vay <span id="modal-amount">10,000,000 VNĐ</span>, kỳ hạn <span id="modal-term">3 tháng</span>, và lãi suất ước tính <span id="modal-rate">1.89%</span>:</p>
-
-            <!-- ---------------------------------------------------- -->
-            <!-- PHẦN 1: GIAO DIỆN BẢNG (CHO TABLET & DESKTOP) -->
-            <!-- ---------------------------------------------------- -->
-            <div class="hidden md:block overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-lg">
-                    <thead class="bg-accent-blue">
-                        <tr>
-                            <th class="px-2 py-3 text-left text-xs font-semibold text-white uppercase tracking-wider w-1/4">Tổ chức Vay</th>
-                            <th class="px-2 py-3 text-left text-xs font-semibold text-white uppercase tracking-wider">Hạn Mức</th>
-                            <th class="px-2 py-3 text-left text-xs font-semibold text-white uppercase tracking-wider">Lãi Suất (APR)</th>
-                            <th class="px-2 py-3 text-left text-xs font-semibold text-white uppercase tracking-wider">Kỳ Hạn</th>
-                            <th class="px-2 py-3 text-center text-xs font-semibold text-white uppercase tracking-wider">Hành Động</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-gray-200 text-text-dark">
-                        <!-- Ưu đãi 1 (Tốt nhất) → VayMeo -->
-                        <tr class="hover:bg-green-50 transition duration-150 border-l-4 border-green-600">
-                            <td class="p-2 whitespace-nowrap text-sm font-medium">Credit Loan Expert</td>
-                            <td class="p-2 whitespace-nowrap text-sm text-accent-blue font-semibold">Tới 70 Triệu</td>
-                            <td class="p-2 whitespace-nowrap text-sm font-bold text-green-600">10.68%</td>
-                            <td class="p-2 whitespace-nowrap text-sm">6-36T</td>
-                            <td class="p-2 whitespace-nowrap text-center">
-                                <a href="https://clearpmf.com/ql/r4DuB" target="_blank" rel="nofollow noopener">
-                                    <button class="cta-yellow-button text-xs py-1.5 px-3 rounded-full text-white font-semibold">
-                                        Chọn & Tiếp Tục
-                                    </button>
-                                </a>
-                            </td>
-                        </tr>
-                        <!-- Ưu đãi 2 (Mới) → Cashspace -->
-                        <tr class="hover:bg-blue-50 transition duration-150">
-                            <td class="p-2 whitespace-nowrap text-sm font-medium">Ocean Financial</td>
-                            <td class="p-2 whitespace-nowrap text-sm text-accent-blue font-semibold">Tới 60 Triệu</td>
-                            <td class="p-2 whitespace-nowrap text-sm">13.20%</td>
-                            <td class="p-2 whitespace-nowrap text-sm">12-48T</td>
-                            <td class="p-2 whitespace-nowrap text-center">
-                                <a href="https://clearpmf.com/ql/vah2MHBmT" target="_blank" rel="nofollow noopener">
-                                    <button class="cta-yellow-button text-xs py-1.5 px-3 rounded-full text-white font-semibold">
-                                        Xem Chi Tiết
-                                    </button>
-                                </a>
-                            </td>
-                        </tr>
-                        <!-- Ưu đãi 3 (Mới) → 9Fin Vay Online -->
-                        <tr class="hover:bg-blue-50 transition duration-150">
-                            <td class="p-2 whitespace-nowrap text-sm font-medium">Fast Capital One</td>
-                            <td class="p-2 whitespace-nowrap text-sm text-accent-blue font-semibold">Tới 30 Triệu</td>
-                            <td class="p-2 whitespace-nowrap text-sm">6-24T</td>
-                            <td class="p-2 whitespace-nowrap text-sm">3-24T</td>
-                            <td class="p-2 whitespace-nowrap text-center">
-                                <a href="https://clearpmf.com/ql/abFgxzt" target="_blank" rel="nofollow noopener">
-                                    <button class="cta-yellow-button text-xs py-1.5 px-3 rounded-full text-white font-semibold">
-                                        Xem Chi Tiết
-                                    </button>
-                                </a>
-                            </td>
-                        </tr>
-                        <!-- Ưu đãi 4 → Dong Shop Sun -->
-                        <tr class="hover:bg-gray-50 transition duration-150">
-                            <td class="p-2 whitespace-nowrap text-sm font-medium">SEEKER LOANS</td>
-                            <td class="p-2 whitespace-nowrap text-sm text-accent-blue font-semibold">Tới 50 Triệu</td>
-                            <td class="p-2 whitespace-nowrap text-sm">17.88%</td>
-                            <td class="p-2 whitespace-nowrap text-sm">12-48T</td>
-                            <td class="p-2 whitespace-nowrap text-center">
-                                <a href="https://clearpmf.com/ql/Hjin8Zt5" target="_blank" rel="nofollow noopener">
-                                    <button class="cta-yellow-button text-xs py-1.5 px-3 rounded-full text-white font-semibold">
-                                        Xem Chi Tiết
-                                    </button>
-                                </a>
-                            </td>
-                        </tr>
-                        <!-- Ưu đãi 5 (Rủi ro cao) → F88 -->
-                        <tr class="hover:bg-red-50 transition duration-150">
-                            <td class="p-2 whitespace-nowrap text-sm font-medium text-red-700">HANFINCAL (Hạn mức cao)</td>
-                            <td class="p-2 whitespace-nowrap text-sm text-accent-blue font-semibold">Tới 100 Triệu</td>
-                            <td class="p-2 whitespace-nowrap text-sm font-bold text-red-600">34.68%</td>
-                            <td class="p-2 whitespace-nowrap text-sm">12-60T</td>
-                            <td class="p-2 whitespace-nowrap text-center">
-                                <a href="https://clearpmf.com/ql/UorqLEc" target="_blank" rel="nofollow noopener">
-                                    <button class="cta-yellow-button text-xs py-1.5 px-3 rounded-full text-white font-semibold">
-                                        Xem Chi Tiết
-                                    </button>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+    <!-- MODAL 1: LOAN OFFERS (Ưu đãi vay cá nhân hóa) -->
+    <div id="offer-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-backdrop">
+        <div class="bg-white rounded-xl shadow-3xl w-full max-w-4xl max-h-[90vh] overflow-y-auto transform transition-all">
+            <!-- Header Modal -->
+            <div class="p-4 sm:p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white rounded-t-xl">
+                <h2 class="text-lg sm:text-2xl font-bold text-text-dark">Ưu Đãi Vay Cá Nhân Hóa Của Bạn</h2>
+                <button onclick="closeOfferModal()" class="text-gray-400 hover:text-gray-700 transition duration-150">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
             </div>
             
-            <!-- ---------------------------------------------------- -->
-            <!-- PHẦN 2: GIAO DIỆN CARD (CHO MOBILE) -->
-            <!-- ---------------------------------------------------- -->
-            <div class="md:hidden space-y-4">
+            <!-- Nội dung chính Modal -->
+            <div class="p-4 sm:p-6">
+                <!-- Thông tin khoản vay ước tính -->
+                <p class="mb-4 text-sm sm:text-base font-semibold text-text-secondary">Dựa trên khoản vay <span id="modal-amount">10,000,000 VNĐ</span>, kỳ hạn <span id="modal-term">3 tháng</span>, và lãi suất ước tính <span id="modal-rate">1.89%</span>:</p>
+
+                <!-- ---------------------------------------------------- -->
+                <!-- PHẦN 1: GIAO DIỆN BẢNG (CHO TABLET & DESKTOP) -->
+                <!-- ---------------------------------------------------- -->
+                <div class="hidden md:block overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-lg">
+                        <thead class="bg-accent-blue">
+                            <tr>
+                                <th class="px-2 py-3 text-left text-xs font-semibold text-white uppercase tracking-wider w-1/4">Tổ chức Vay</th>
+                                <th class="px-2 py-3 text-left text-xs font-semibold text-white uppercase tracking-wider">Hạn Mức</th>
+                                <th class="px-2 py-3 text-left text-xs font-semibold text-white uppercase tracking-wider">Lãi Suất (APR)</th>
+                                <th class="px-2 py-3 text-left text-xs font-semibold text-white uppercase tracking-wider">Kỳ Hạn</th>
+                                <th class="px-2 py-3 text-center text-xs font-semibold text-white uppercase tracking-wider">Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200 text-text-dark">
+                            <!-- Ưu đãi 1 (Tốt nhất) -->
+                            <tr class="hover:bg-green-50 transition duration-150 border-l-4 border-green-600">
+                                <td class="p-2 whitespace-nowrap text-sm font-medium">Credit Loan Expert</td>
+                                <td class="p-2 whitespace-nowrap text-sm text-accent-blue font-semibold">Tới 70 Triệu</td>
+                                <td class="p-2 whitespace-nowrap text-sm font-bold text-green-600">10.68%</td>
+                                <td class="p-2 whitespace-nowrap text-sm">6-36T</td>
+                                <td class="p-2 whitespace-nowrap text-center">
+                                    <button onclick="openDetailModal('Credit Loan Expert')" class="cta-yellow-button text-xs py-1.5 px-3 rounded-full text-white font-semibold">
+                                        Chọn & Tiếp Tục
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Ưu đãi 2 (Mới) -->
+                            <tr class="hover:bg-blue-50 transition duration-150">
+                                <td class="p-2 whitespace-nowrap text-sm font-medium">Ocean Financial</td>
+                                <td class="p-2 whitespace-nowrap text-sm text-accent-blue font-semibold">Tới 60 Triệu</td>
+                                <td class="p-2 whitespace-nowrap text-sm">13.20%</td>
+                                <td class="p-2 whitespace-nowrap text-sm">12-48T</td>
+                                <td class="p-2 whitespace-nowrap text-center">
+                                    <button onclick="openDetailModal('Ocean Financial')" class="cta-yellow-button text-xs py-1.5 px-3 rounded-full text-white font-semibold">
+                                        Xem Chi Tiết
+                                    </button>
+                                </td>
+                            </tr>
+                             <!-- Ưu đãi 3 (Mới) -->
+                            <tr class="hover:bg-blue-50 transition duration-150">
+                                <td class="p-2 whitespace-nowrap text-sm font-medium">Fast Capital One</td>
+                                <td class="p-2 whitespace-nowrap text-sm text-accent-blue font-semibold">Tới 30 Triệu</td>
+                                <td class="p-2 whitespace-nowrap text-sm">6-24T</td>
+                                <td class="p-2 whitespace-nowrap text-sm">3-24T</td>
+                                <td class="p-2 whitespace-nowrap text-center">
+                                    <button onclick="openDetailModal('Fast Capital One')" class="cta-yellow-button text-xs py-1.5 px-3 rounded-full text-white font-semibold">
+                                        Xem Chi Tiết
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Ưu đãi 4 -->
+                            <tr class="hover:bg-gray-50 transition duration-150">
+                                <td class="p-2 whitespace-nowrap text-sm font-medium">SEEKER LOANS</td>
+                                <td class="p-2 whitespace-nowrap text-sm text-accent-blue font-semibold">Tới 50 Triệu</td>
+                                <td class="p-2 whitespace-nowrap text-sm">17.88%</td>
+                                <td class="p-2 whitespace-nowrap text-sm">12-48T</td>
+                                <td class="p-2 whitespace-nowrap text-center">
+                                    <button onclick="openDetailModal('SEEKER LOANS')" class="cta-yellow-button text-xs py-1.5 px-3 rounded-full text-white font-semibold">
+                                        Xem Chi Tiết
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Ưu đãi 5 (Rủi ro cao) -->
+                            <tr class="hover:bg-red-50 transition duration-150">
+                                <td class="p-2 whitespace-nowrap text-sm font-medium text-red-700">HANFINCAL (Hạn mức cao)</td>
+                                <td class="p-2 whitespace-nowrap text-sm text-accent-blue font-semibold">Tới 100 Triệu</td>
+                                <td class="p-2 whitespace-nowrap text-sm font-bold text-red-600">34.68%</td>
+                                <td class="p-2 whitespace-nowrap text-sm">12-60T</td>
+                                <td class="p-2 whitespace-nowrap text-center">
+                                    <button onclick="openDetailModal('HANFINCAL')" class="cta-yellow-button text-xs py-1.5 px-3 rounded-full text-white font-semibold">
+                                        Xem Chi Tiết
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 
-                <!-- Card Ưu đãi 1: VayMeo -->
-                <div class="offer-card-mobile bg-white p-4 rounded-xl shadow-lg border-l-4 border-green-600">
-                    <div class="flex items-center justify-between mb-3 border-b pb-2">
-                        <h3 class="text-base font-bold text-accent-blue">VayMeo</h3>
-                        <span class="text-xs font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded-full">Lựa chọn TỐT NHẤT</span>
-                    </div>
-                    <div class="space-y-1 text-sm">
-                        <p><span class="font-semibold text-text-dark">Hạn Mức Vay:</span> <span class="text-accent-blue font-bold">Tối đa 70 Triệu VNĐ</span></p>
-                        <p><span class="font-semibold text-text-dark">Lãi Suất (APR):</span> <span class="font-bold text-green-600">10.68%</span> - 25.99%</p>
-                        <p><span class="font-semibold text-text-dark">Kỳ Hạn:</span> 6 - 36 Tháng</p>
-                    </div>
-                    <a href="https://clearpmf.com/ql/r4DuB" target="_blank" rel="nofollow noopener">
-                        <button class="cta-yellow-button w-full mt-4 py-2 text-base rounded-full text-white font-semibold shadow-md">
+                <!-- ---------------------------------------------------- -->
+                <!-- PHẦN 2: GIAO DIỆN CARD (CHO MOBILE) -->
+                <!-- ---------------------------------------------------- -->
+                <div class="md:hidden space-y-4">
+                    
+                    <!-- Card Ưu đãi 1: Credit Loan Expert (Tốt nhất) -->
+                    <div class="offer-card-mobile bg-white p-4 rounded-xl shadow-lg border-l-4 border-green-600">
+                        <div class="flex items-center justify-between mb-3 border-b pb-2">
+                            <h3 class="text-base font-bold text-accent-blue">Credit Loan Expert</h3>
+                            <span class="text-xs font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded-full">Lựa chọn TỐT NHẤT</span>
+                        </div>
+                        <div class="space-y-1 text-sm">
+                            <p><span class="font-semibold text-text-dark">Hạn Mức Vay:</span> <span class="text-accent-blue font-bold">Tối đa 70 Triệu VNĐ</span></p>
+                            <p><span class="font-semibold text-text-dark">Lãi Suất (APR):</span> <span class="font-bold text-green-600">10.68%</span> - 25.99%</p>
+                            <p><span class="font-semibold text-text-dark">Kỳ Hạn:</span> 6 - 36 Tháng</p>
+                        </div>
+                        <button onclick="openDetailModal('Credit Loan Expert')" class="cta-yellow-button w-full mt-4 py-2 text-base rounded-full text-white font-semibold shadow-md">
                             Chọn & Tiếp Tục
                         </button>
-                    </a>
-                </div>
+                    </div>
 
-                <!-- Card Ưu đãi 2: Ocean Financial → Cashspace -->
-                <div class="offer-card-mobile bg-white p-4 rounded-xl shadow-md border border-gray-200">
+                    <!-- Card Ưu đãi 2: Ocean Financial (Mới) -->
+                    <div class="offer-card-mobile bg-white p-4 rounded-xl shadow-md border border-gray-200">
+                         <div class="flex items-center justify-between mb-3 border-b pb-2">
+                            <h3 class="text-base font-bold text-blue-800">Ocean Financial</h3>
+                            <span class="text-xs font-semibold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full">Mới</span>
+                        </div>
+                        <div class="space-y-1 text-sm">
+                            <p><span class="font-semibold text-text-dark">Hạn Mức Vay:</span> <span class="text-accent-blue font-bold">Tối đa 60 Triệu VNĐ</span></p>
+                            <p><span class="font-semibold text-text-dark">Lãi Suất (APR):</span> 13.20% - 28.00%</p>
+                            <p><span class="font-semibold text-text-dark">Kỳ Hạn:</span> 12 - 48 Tháng</p>
+                        </div>
+                        <button onclick="openDetailModal('Ocean Financial')" class="cta-yellow-button w-full mt-4 py-2 text-base rounded-full text-white font-semibold shadow-md">
+                            Xem Các Lựa Chọn Của Bạn
+                        </button>
+                    </div>
+
+                    <!-- Card Ưu đãi 3: Fast Capital One (Mới) -->
+                    <div class="offer-card-mobile bg-white p-4 rounded-xl shadow-md border border-gray-200">
                         <div class="flex items-center justify-between mb-3 border-b pb-2">
-                        <h3 class="text-base font-bold text-blue-800">Ocean Financial</h3>
-                        <span class="text-xs font-semibold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full">Mới</span>
-                    </div>
-                    <div class="space-y-1 text-sm">
-                        <p><span class="font-semibold text-text-dark">Hạn Mức Vay:</span> <span class="text-accent-blue font-bold">Tối đa 60 Triệu VNĐ</span></p>
-                        <p><span class="font-semibold text-text-dark">Lãi Suất (APR):</span> 13.20% - 28.00%</p>
-                        <p><span class="font-semibold text-text-dark">Kỳ Hạn:</span> 12 - 48 Tháng</p>
-                    </div>
-                    <a href="https://clearpmf.com/ql/vah2MHBmT" target="_blank" rel="nofollow noopener">
-                        <button class="cta-yellow-button w-full mt-4 py-2 text-base rounded-full text-white font-semibold shadow-md">
+                            <h3 class="text-base font-bold text-indigo-700">Fast Capital One</h3>
+                            <span class="text-xs font-semibold text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded-full">Duyệt nhanh</span>
+                        </div>
+                        <div class="space-y-1 text-sm">
+                            <p><span class="font-semibold text-text-dark">Hạn Mức Vay:</span> <span class="text-accent-blue font-bold">Tối đa 30 Triệu VNĐ</span></p>
+                            <p><span class="font-semibold text-text-dark">Lãi Suất (APR):</span> 15.00% - 30.00%</p>
+                            <p><span class="font-semibold text-text-dark">Kỳ Hạn:</span> 3 - 24 Tháng</p>
+                        </div>
+                        <button onclick="openDetailModal('Fast Capital One')" class="cta-yellow-button w-full mt-4 py-2 text-base rounded-full text-white font-semibold shadow-md">
                             Xem Các Lựa Chọn Của Bạn
                         </button>
-                    </a>
-                </div>
+                    </div>
 
-                <!-- Card Ưu đãi 3: Fast Capital One → 9Fin Vay Online -->
-                <div class="offer-card-mobile bg-white p-4 rounded-xl shadow-md border border-gray-200">
-                    <div class="flex items-center justify-between mb-3 border-b pb-2">
-                        <h3 class="text-base font-bold text-indigo-700">Fast Capital One</h3>
-                        <span class="text-xs font-semibold text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded-full">Duyệt nhanh</span>
-                    </div>
-                    <div class="space-y-1 text-sm">
-                        <p><span class="font-semibold text-text-dark">Hạn Mức Vay:</span> <span class="text-accent-blue font-bold">Tối đa 30 Triệu VNĐ</span></p>
-                        <p><span class="font-semibold text-text-dark">Lãi Suất (APR):</span> 15.00% - 30.00%</p>
-                        <p><span class="font-semibold text-text-dark">Kỳ Hạn:</span> 3 - 24 Tháng</p>
-                    </div>
-                    <a href="https://clearpmf.com/ql/abFgxzt" target="_blank" rel="nofollow noopener">
-                        <button class="cta-yellow-button w-full mt-4 py-2 text-base rounded-full text-white font-semibold shadow-md">
+                    <!-- Card Ưu đãi 4: SEEKER LOANS -->
+                    <div class="offer-card-mobile bg-white p-4 rounded-xl shadow-md border border-gray-200">
+                         <div class="flex items-center justify-between mb-3 border-b pb-2">
+                            <h3 class="text-base font-bold text-red-600">SEEKER LOANS</h3>
+                        </div>
+                        <div class="space-y-1 text-sm">
+                            <p><span class="font-semibold text-text-dark">Hạn Mức Vay:</span> <span class="text-accent-blue font-bold">Tối đa 50 Triệu VNĐ</span></p>
+                            <p><span class="font-semibold text-text-dark">Lãi Suất (APR):</span> 17.88% - 35.99%</p>
+                            <p><span class="font-semibold text-text-dark">Kỳ Hạn:</span> 12 - 48 Tháng</p>
+                        </div>
+                        <button onclick="openDetailModal('SEEKER LOANS')" class="cta-yellow-button w-full mt-4 py-2 text-base rounded-full text-white font-semibold shadow-md">
                             Xem Các Lựa Chọn Của Bạn
                         </button>
-                    </a>
-                </div>
+                    </div>
 
-                <!-- Card Ưu đãi 4: SEEKER LOANS → Dong Shop Sun -->
-                <div class="offer-card-mobile bg-white p-4 rounded-xl shadow-md border border-gray-200">
+                    <!-- Card Ưu đãi 5: HANFINCAL -->
+                    <div class="offer-card-mobile bg-white p-4 rounded-xl shadow-md border border-gray-200">
                         <div class="flex items-center justify-between mb-3 border-b pb-2">
-                        <h3 class="text-base font-bold text-red-600">SEEKER LOANS</h3>
-                    </div>
-                    <div class="space-y-1 text-sm">
-                        <p><span class="font-semibold text-text-dark">Hạn Mức Vay:</span> <span class="text-accent-blue font-bold">Tối đa 50 Triệu VNĐ</span></p>
-                        <p><span class="font-semibold text-text-dark">Lãi Suất (APR):</span> 17.88% - 35.99%</p>
-                        <p><span class="font-semibold text-text-dark">Kỳ Hạn:</span> 12 - 48 Tháng</p>
-                    </div>
-                    <a href="https://clearpmf.com/ql/Hjin8Zt5" target="_blank" rel="nofollow noopener">
-                        <button class="cta-yellow-button w-full mt-4 py-2 text-base rounded-full text-white font-semibold shadow-md">
+                            <h3 class="text-base font-bold text-red-800">HANFINCAL</h3>
+                        </div>
+                        <div class="space-y-1 text-sm">
+                            <p><span class="font-semibold text-text-dark">Hạn Mức Vay:</span> <span class="text-accent-blue font-bold">Tối đa 100 Triệu VNĐ</span></p>
+                            <p><span class="font-semibold text-text-dark">Lãi Suất (APR):</span> <span class="font-bold text-red-600">34.68%</span> - 40.00%</p>
+                            <p><span class="font-semibold text-text-dark">Kỳ Hạn:</span> 12 - 60 Tháng</p>
+                        </div>
+                        <button onclick="openDetailModal('HANFINCAL')" class="cta-yellow-button w-full mt-4 py-2 text-base rounded-full text-white font-semibold shadow-md">
                             Xem Các Lựa Chọn Của Bạn
                         </button>
-                    </a>
+                    </div>
                 </div>
 
-                <!-- Card Ưu đãi 5: HANFINCAL → F88 -->
-                <div class="offer-card-mobile bg-white p-4 rounded-xl shadow-md border border-gray-200">
-                    <div class="flex items-center justify-between mb-3 border-b pb-2">
-                        <h3 class="text-base font-bold text-red-800">HANFINCAL</h3>
-                    </div>
-                    <div class="space-y-1 text-sm">
-                        <p><span class="font-semibold text-text-dark">Hạn Mức Vay:</span> <span class="text-accent-blue font-bold">Tối đa 100 Triệu VNĐ</span></p>
-                        <p><span class="font-semibold text-text-dark">Lãi Suất (APR):</span> <span class="font-bold text-red-600">34.68%</span> - 40.00%</p>
-                        <p><span class="font-semibold text-text-dark">Kỳ Hạn:</span> 12 - 60 Tháng</p>
-                    </div>
-                    <a href="https://clearpmf.com/ql/UorqLEc" target="_blank" rel="nofollow noopener">
-                        <button class="cta-yellow-button w-full mt-4 py-2 text-base rounded-full text-white font-semibold shadow-md">
-                            Xem Các Lựa Chọn Của Bạn
-                        </button>
-                    </a>
-                </div>
             </div>
 
+            <!-- Footer Modal (CTA chung) -->
+            <div class="p-4 sm:p-6 bg-gray-50 rounded-b-xl border-t border-gray-200">
+                <button onclick="openDetailModal('Credit Loan Expert')" class="w-full bg-accent-blue hover:bg-blue-600 text-white font-bold py-3 rounded-lg text-lg transition duration-200">
+                    TIẾP TỤC VỚI ƯU ĐÃI TỐT NHẤT (Credit Loan Expert)
+                </button>
+            </div>
         </div>
     </div>
-</div>
 
+    <!-- MODAL 2: INFO (Thông tin footer) -->
+    <div id="info-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-backdrop">
+        <div class="bg-white rounded-xl shadow-3xl w-full max-w-xl max-h-[80vh] overflow-y-auto transform transition-all">
+            <!-- Header Modal -->
+            <div class="p-4 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white rounded-t-xl">
+                <h2 id="info-modal-title" class="text-xl font-bold text-text-dark">Tiêu đề</h2>
+                <button onclick="closeInfoModal()" class="text-gray-400 hover:text-gray-700 transition duration-150">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
             
             <!-- Nội dung chính Modal -->
             <div id="info-modal-content" class="p-4 text-text-dark text-sm leading-relaxed">
@@ -634,6 +631,66 @@
             </div>
         </div>
     </div>
+    
+    <!-- MODAL 3: DETAIL (Thông tin chi tiết gói vay) -->
+    <div id="detail-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-backdrop">
+        <div class="bg-white rounded-xl shadow-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto transform transition-all">
+            <!-- Header Modal -->
+            <div class="p-4 sm:p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white rounded-t-xl">
+                <h2 class="text-lg sm:text-2xl font-bold text-text-dark">Chi Tiết Ưu Đãi Vay Vốn</h2>
+                <button onclick="closeDetailModal()" class="text-gray-400 hover:text-gray-700 transition duration-150">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            
+            <!-- Nội dung chính Modal -->
+            <div class="p-4 sm:p-6">
+                <div class="text-center mb-6">
+                    <p class="text-xl font-semibold text-text-secondary">Bạn đang xem chi tiết ưu đãi từ</p>
+                    <h3 id="detail-lender-name" class="text-3xl font-extrabold text-accent-blue mt-1 mb-4">Credit Loan Expert</h3>
+                    <div class="inline-flex items-center space-x-2 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span>Phù hợp với hồ sơ của bạn</span>
+                    </div>
+                </div>
+
+                <div id="detail-lender-content" class="space-y-4 text-text-dark">
+                    <!-- Nội dung chi tiết được chèn bằng JS -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-100 p-3 rounded-lg">
+                            <p class="text-xs font-medium text-text-secondary">Hạn Mức Vay Tối Đa</p>
+                            <p class="text-lg font-bold text-red-600" id="detail-amount">70.000.000 VNĐ</p>
+                        </div>
+                         <div class="bg-gray-100 p-3 rounded-lg">
+                            <p class="text-xs font-medium text-text-secondary">Lãi Suất Cơ Bản (APR/năm)</p>
+                            <p class="text-lg font-bold text-green-600" id="detail-rate">10.68%</p>
+                        </div>
+                    </div>
+
+                    <h4 class="text-lg font-bold text-text-dark pt-3 border-t">Đặc Điểm Gói Vay:</h4>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-text-secondary pl-3" id="detail-features">
+                        <!-- Đặc điểm được chèn bằng JS -->
+                    </ul>
+                    
+                    <h4 class="text-lg font-bold text-text-dark pt-3 border-t">Điều Kiện Cơ Bản:</h4>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-text-secondary pl-3">
+                        <li>Công dân Việt Nam, độ tuổi từ 20 đến 60.</li>
+                        <li>Có thu nhập ổn định (từ lương, kinh doanh hoặc tự doanh).</li>
+                        <li>Không có nợ xấu tại thời điểm đăng ký (CIC nhóm 1).</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer Modal (CTA) -->
+            <div class="p-4 sm:p-6 bg-accent-blue/5 rounded-b-xl border-t border-accent-blue/20">
+                <button class="w-full cta-button text-white font-bold py-3 rounded-lg text-lg transition duration-200 shadow-xl">
+                    ĐĂNG KÝ VAY NGAY (CHUYỂN ĐẾN TRANG ĐỐI TÁC)
+                </button>
+                <p class="text-center text-xs text-text-secondary mt-2">Bạn sẽ được chuyển hướng đến trang đăng ký chính thức của tổ chức cho vay.</p>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         // Hàm định dạng số tiền
@@ -683,7 +740,7 @@
             // Tổng lãi suất làm tròn đến 1,000 gần nhất
             totalInterestDisplay.textContent = '~ ' + formatCurrency(Math.round(totalInterest / 1000) * 1000);
 
-            // Cập nhật dữ liệu cho Modal
+            // Cập nhật dữ liệu cho Modal Ưu đãi
             document.getElementById('modal-amount').textContent = formatCurrency(P);
             document.getElementById('modal-term').textContent = n + ' tháng';
             document.getElementById('modal-rate').textContent = ratePercent.toFixed(2) + '%';
@@ -701,10 +758,9 @@
 
         // --- Logic Modal ---
 
-        // Modal Ưu đãi
+        // Modal 1: Ưu đãi
         const offerModal = document.getElementById('offer-modal');
         function openOfferModal() {
-            // Cập nhật lại thông số tính toán lần cuối trước khi mở modal
             updateCalculator(); 
             offerModal.classList.remove('hidden');
         }
@@ -712,18 +768,17 @@
             offerModal.classList.add('hidden');
         }
 
-        // Modal Thông tin
+        // Modal 2: Thông tin footer
         const infoModal = document.getElementById('info-modal');
         const infoModalTitle = document.getElementById('info-modal-title');
         const infoModalContent = document.getElementById('info-modal-content');
 
         const infoContentMap = {
-            // ĐÃ CẬP NHẬT CONTENT
             "Giới thiệu": "TRẠM TÀI CHÍNH là nền tảng kết nối tài chính hàng đầu, giúp người dùng tìm kiếm và so sánh các sản phẩm vay tín chấp cá nhân từ các đối tác ngân hàng và tổ chức tài chính uy tín. Sứ mệnh của chúng tôi là mang lại giải pháp tài chính nhanh chóng, minh bạch và an toàn.",
             "Chính sách bảo mật": "Chúng tôi cam kết bảo mật tuyệt đối thông tin cá nhân của Khách hàng. Mọi dữ liệu chỉ được sử dụng với mục đích cá nhân hóa ưu đãi vay và không được tiết lộ cho bên thứ ba khi chưa có sự đồng ý của Khách hàng. Chúng tôi tuân thủ các quy định pháp luật về bảo vệ dữ liệu cá nhân.",
             "Điều khoản sử dụng": "Bằng việc sử dụng dịch vụ của TRẠM TÀI CHÍNH, bạn đồng ý với các điều khoản và điều kiện được quy định. Nền tảng chỉ hoạt động như một bên trung gian kết nối; chúng tôi không phải là tổ chức cho vay. Mọi vấn đề pháp lý và hợp đồng sẽ do Khách hàng và Tổ chức cho vay giải quyết trực tiếp.",
             "Hỏi đáp (FAQ)": "<h4 class='font-bold mb-2'>1. Tôi có phải trả phí sử dụng dịch vụ không?</h4><p class='mb-4'>Không. Dịch vụ tìm kiếm và kết nối ưu đãi vay của TRẠM TÀI CHÍNH là hoàn toàn miễn phí đối với Khách hàng.</p><h4 class='font-bold mb-2'>2. Tôi có thể vay tối đa bao nhiêu?</h4><p class='mb-4'>Hạn mức tối đa hiện tại là 100.000.000 VNĐ, tuy nhiên hạn mức cụ thể tùy thuộc vào hồ sơ tín dụng và thu nhập của bạn.</p>",
-            "Liên hệ": "Mọi thắc mắc hoặc yêu cầu hỗ trợ, vui lòng liên hệ với chúng tôi qua:<ul class='list-disc list-inside mt-2'><li>Email: support@tramtaichinh.vn</li><li>Hotline: 1900 6868</li><li>Địa chỉ văn phòng: Tầng 15, Tòa nhà Tài Chính, Hà Nội.</li></ul>"
+            "Liên hệ": "Mọi thắc mắc hoặc yêu cầu hỗ trợ, vui lòng liên hệ với chúng tôi qua:<ul class='list-disc list-inside mt-2'><li>Email: Lienhe@tramtaichinh.com</li><li>Hotline: 0585 574 757</li><li>Địa chỉ văn phòng: Tầng 15, Tòa nhà Tài Chính, Hà Nội.</li></ul>"
         };
 
         function openInfoModal(title) {
@@ -735,6 +790,85 @@
             infoModal.classList.add('hidden');
         }
 
+        // Modal 3: Chi tiết gói vay
+        const detailModal = document.getElementById('detail-modal');
+        const detailLenderName = document.getElementById('detail-lender-name');
+        const detailAmount = document.getElementById('detail-amount');
+        const detailRate = document.getElementById('detail-rate');
+        const detailFeatures = document.getElementById('detail-features');
+        
+        // Dữ liệu chi tiết giả định cho từng tổ chức
+        const detailData = {
+            "Credit Loan Expert": {
+                amount: 'Tối đa 70.000.000 VNĐ',
+                rate: '10.68%',
+                features: [
+                    'Thời gian duyệt hồ sơ siêu tốc: trong vòng 3 giờ.',
+                    'Không cần thế chấp tài sản, chỉ cần CMND/CCCD.',
+                    'Lãi suất cạnh tranh nhất thị trường (cho khách hàng có lịch sử tín dụng tốt).',
+                    'Được phép trả nợ trước hạn mà không bị phạt (sau 6 tháng).'
+                ]
+            },
+            "Ocean Financial": {
+                amount: 'Tối đa 60.000.000 VNĐ',
+                rate: '13.20%',
+                features: [
+                    'Sản phẩm mới ra mắt với nhiều ưu đãi dành cho khách hàng mới.',
+                    'Hỗ trợ khách hàng tự doanh có giấy phép kinh doanh.',
+                    'Kỳ hạn linh hoạt lên đến 48 tháng.',
+                ]
+            },
+            "Fast Capital One": {
+                amount: 'Tối đa 30.000.000 VNĐ',
+                rate: '15.00%',
+                features: [
+                    'Quy trình online 100%, không cần gặp mặt.',
+                    'Yêu cầu giấy tờ đơn giản, tập trung vào bảng lương.',
+                    'Lãi suất cố định, không thay đổi trong suốt kỳ hạn vay.'
+                ]
+            },
+            "SEEKER LOANS": {
+                amount: 'Tối đa 50.000.000 VNĐ',
+                rate: '17.88%',
+                features: [
+                    'Chấp nhận hồ sơ có lịch sử tín dụng chưa hoàn hảo.',
+                    'Giải ngân nhanh chóng trong 24 giờ làm việc.',
+                    'Hỗ trợ khách hàng vay theo hóa đơn điện/nước.'
+                ]
+            },
+            "HANFINCAL": {
+                amount: 'Tối đa 100.000.000 VNĐ',
+                rate: '34.68%',
+                features: [
+                    'Hạn mức cao nhất, phù hợp với nhu cầu tài chính lớn.',
+                    'Chấp nhận hồ sơ khó, tỷ lệ duyệt cao.',
+                    'Lãi suất cao do mức độ rủi ro lớn hơn.'
+                ]
+            }
+        };
+
+        function openDetailModal(lenderName) {
+            const data = detailData[lenderName];
+            if (!data) return; // Nếu không tìm thấy dữ liệu, không mở modal
+
+            // Cập nhật nội dung modal
+            detailLenderName.textContent = lenderName;
+            detailAmount.textContent = data.amount;
+            detailRate.textContent = data.rate + " / năm"; 
+
+            // Cập nhật danh sách đặc điểm
+            detailFeatures.innerHTML = data.features.map(feat => `<li>${feat}</li>`).join('');
+
+            // Đóng modal cũ (ưu đãi) và mở modal mới (chi tiết)
+            closeOfferModal();
+            detailModal.classList.remove('hidden');
+        }
+
+        function closeDetailModal() {
+            detailModal.classList.add('hidden');
+        }
+
+
         // Đóng modal khi click ra ngoài
         window.onclick = function(event) {
             if (event.target === offerModal) {
@@ -742,6 +876,9 @@
             }
             if (event.target === infoModal) {
                 closeInfoModal();
+            }
+            if (event.target === detailModal) {
+                closeDetailModal();
             }
         }
     </script>
