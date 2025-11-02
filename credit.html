@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chọn thẻ tín dụng phù hợp |  x Trạm tài chính</title>
+    
+    <!-- Meta Tags Cơ bản -->
+    <meta name="description" content="Trạm tài chính giúp bạn tìm và so sánh các thẻ tín dụng phù hợp nhất từ các đối tác uy tín như VIB, VPBank. Lọc thẻ theo nhu cầu: hoàn tiền, tích điểm, hoặc tài chính linh hoạt.">
+    <meta name="keywords" content="thẻ tín dụng, credit card, VIB, VPBank, hoàn tiền, tích điểm, vay tiêu dùng">
+    <meta name="author" content="Trạm tài chính">
+
+    <!-- Favicon và Icons -->
+    <link rel="icon" href="https://tramtaichinh.com/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://tramtaichinh.com/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://tramtaichinh.com/favicon-32x32.png">
+
+    <!-- Open Graph / Social Media (Facebook, Zalo) - Sử dụng ảnh image_5d5bee.jpg làm banner mặc định -->
+    <meta property="og:title" content="Lựa chọn thẻ tín dụng TỐT NHẤT theo nhu cầu của bạn">
+    <meta property="og:description" content="Trạm tài chính giúp bạn tìm và so sánh các thẻ tín dụng phù hợp nhất từ các đối tác uy tín như VIB, VPBank. Lọc thẻ theo nhu cầu: hoàn tiền, tích điểm, hoặc tài chính linh hoạt.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tramtaichinh.com/pre-landing-the-tin-dung">
+    <meta property="og:image" content="https://static.tikop.vn/article/2024/08/18/the-tin-dung-vib-cach-dang-ky-mo-the-tin-dung-vib-day-du-chi-tiet-1png-66c21793cccc2.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lựa chọn thẻ tín dụng TỐT NHẤT theo nhu cầu của bạn">
+    <meta name="twitter:description" content="Tìm và so sánh các thẻ tín dụng hoàn tiền, tích điểm, hoặc tài chính linh hoạt từ VIB và VPBank.">
+    <meta name="twitter:image" content="https://static.tikop.vn/article/2024/08/18/the-tin-dung-vib-cach-dang-ky-mo-the-tin-dung-vib-day-du-chi-tiet-1png-66c21793cccc2.jpg">
+
+    <!-- Tải Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Schema SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FinancialService",
+      "name": " x Trạm tài chính - Lựa chọn thẻ tín dụng",
+      "description": "Giúp bạn tìm và so sánh các thẻ tín dụng phù hợp nhất từ các đối tác uy tín như VIB, VPBank. Lọc thẻ theo nhu cầu: hoàn tiền, tích điểm, hoặc tài chính linh hoạt.",
+      "provider": {
+        "@type": "Organization",
+        "name": " x Trạm tài chính",
+        "url": "https://tramtaichinh.com"
+      },
+      "serviceType": "Credit Card",
+      "url": "https://tramtaichinh.com" 
+    }
+    </script>
+
+    <style>
+        /* Sử dụng font Inter làm font chữ chính */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* bg-slate-50 */
+        }
+        
+        /* Lớp 'active' cho nút được chọn */
+        .filter-option.active {
+            border-color: #2563EB; /* blue-600 */
+            background-color: #EFF6FF; /* blue-50 */
+            box-shadow: 0 0 0 3px #93C5FD; /* ring-blue-300 */
+            transform: scale(1.02);
+        }
+
+        /* Nút CTA thẻ với màu #f59e0b và hiệu ứng pulse */
+        @keyframes pulse-fade {
+            0%, 100% {
+                opacity: 1;
+                box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+            }
+            50% {
+                opacity: 0.95;
+                box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+            }
+        }
+        .btn-cta-card {
+            background-color: #f59e0b; /* Màu yêu cầu */
+            animation: pulse-fade 2s infinite;
+        }
+        .btn-cta-card:hover {
+            background-color: #d97706; /* Màu đậm hơn khi hover */
+            animation: none; /* Tắt animation khi hover */
+        }
+
+        /* Thẻ chứa ảnh Thumbnail của thẻ tín dụng (TỰ CO GIÃN THEO TỈ LỆ ẢNH GỐC) */
+        .card-thumbnail-container {
+            width: 100%;
+            height: 100%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: #f0f4f8; 
+        }
+        .card-thumbnail-container img {
+            width: 100%; 
+            height: auto; /* Chiều cao tự động để giữ tỉ lệ ảnh gốc */
+            display: block;
+            object-fit: cover; 
+        }
+        
+        /* CSS cho Popup Modal */
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .popup-content {
+            background-color: white;
+            border-radius: 0.75rem; /* 12px */
+            padding: 2rem; /* 32px */
+            max-width: 90%;
+            width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            transform: scale(0.95);
+            transition: transform 0.3s;
+        }
+        .popup-overlay.active .popup-content {
+            transform: scale(1);
+        }
+
+        /* Ẩn marker mặc định của <details> */
+        details > summary {
+            list-style: none; /* Hide default marker */
+        }
+        details > summary::-webkit-details-marker {
+            display: none; /* Hide default marker in Safari */
+        }
+        details[open] summary .faq-icon {
+            transform: rotate(180deg);
+        }
+        .faq-icon {
+             transition: transform 0.3s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 sm:h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="#" class="text-xl sm:text-2xl font-bold text-blue-600"> <span class="text-gray-700"></span> Trạm tài chính</a>
+            </div>
+            <!-- CTA Button -->
+            <div>
+                <a href="#filter-section" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 sm:px-6 rounded-lg transition-all duration-300 hover:bg-blue-700 hover:scale-105 transform text-sm sm:text-base">
+                    Mở Thẻ Ngay
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Filter Section (HERO MỚI - Theo ảnh 1:1, Ảnh trái, Filter phải, Căn trái) -->
+        <section id="filter-section" class="py-12 md:py-24 bg-white">
+            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-16 items-center">
+                    
+                    <!-- Cột 1: Ảnh minh họa (Trái trên PC, Trên trên Mobile) -->
+                    <div class="order-2 lg:order-1 flex justify-center">
+                        <div class="w-full max-w-lg lg:w-full aspect-[1/0.75] lg:aspect-square rounded-2xl overflow-hidden shadow-2xl">
+                            <!-- SỬ DỤNG ẢNH CỦA VIB/ZaloPay THEO YÊU CẦU MỚI image_5e3663.jpg -->
+                            <img src="https://scontent.fsgn2-11.fna.fbcdn.net/v/t39.30808-6/482228277_1036001841906758_5734503269922713623_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=YsJZ3zZlnmkQ7kNvwFaZq13&_nc_oc=AdnZWC2NaBfdK2mF0hO1lvAtJupcqmki9OX0VBoI8LE7fosEPFjCKDFV-l2R3OJwX0wGGZdyJqHMolzJEbsnfpTy&_nc_zt=23&_nc_ht=scontent.fsgn2-11.fna&_nc_gid=o_kbBRfG9dFzbTa9_yPRdw&oh=00_Afj0ML-6lQDuKIBJGaA8dnhmaUkZwwNp-aq-CAzPQXc5dA&oe=690D5742" 
+                                 alt="Ảnh minh họa ưu đãi mở thẻ tín dụng VIB/ZaloPay" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/800x600/003F6B/FFFFFF?text=Ưu+Đãi+Mở+Thẻ';">
+                        </div>
+                    </div>
+
+                    <!-- Cột 2: Text + Filter (Phải trên PC, Dưới trên Mobile) -->
+                    <div class="order-1 lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+                        
+                        <!-- Tiêu đề lớn - Căn trái theo ảnh mới -->
+                        <div class="max-w-full lg:max-w-xl">
+                            <h1 class="text-4xl sm:text-5xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
+                                Mục tiêu chính của bạn là gì?
+                            </h1>
+                        </div>
+
+                        <!-- Mô tả -->
+                        <p class="text-lg text-gray-600 mb-8 max-w-md lg:max-w-none">
+                            Hãy chọn một mục tiêu quan trọng nhất để chúng tôi gợi ý cho bạn chiếc thẻ "chân ái" từ VIB, VPBank và các đối tác uy tín khác.
+                        </p>
+                        
+                        <!-- Khối Lựa chọn Filter (Phần chính của Landing Page) -->
+                        <div class="space-y-4 w-full max-w-md lg:max-w-none">
+                            <!-- Lựa chọn A: Hoàn tiền -->
+                            <button class="filter-option group w-full text-left p-5 border-2 border-gray-200 rounded-xl transition-all duration-300 hover:shadow-lg hover:border-blue-500 cursor-pointer" data-group="group-a">
+                                <div class="flex items-center">
+                                    <!-- Icon (Giữ màu xanh dương theo ảnh mới) -->
+                                    <div class="flex-shrink-0 w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fa-solid fa-money-bill-wave text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-gray-900">Tiết kiệm / Hoàn tiền</h3>
+                                        <p class="text-gray-500 text-sm mt-0.5">Nhận lại tiền cho mọi chi tiêu hàng ngày.</p>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <!-- Lựa chọn B: Tích điểm -->
+                            <button class="filter-option group w-full text-left p-5 border-2 border-gray-200 rounded-xl transition-all duration-300 hover:shadow-lg hover:border-green-500 cursor-pointer" data-group="group-b">
+                                <div class="flex items-center">
+                                    <!-- Icon (Giữ màu xanh lá theo ảnh mới) -->
+                                    <div class="flex-shrink-0 w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fa-solid fa-plane-departure text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-gray-900">Tích điểm đổi quà / Miles</h3>
+                                        <p class="text-gray-500 text-sm mt-0.5">Đổi dặm bay, voucher, hoặc quà tặng giá trị.</p>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <!-- Lựa chọn C: Linh hoạt -->
+                            <button class="filter-option group w-full text-left p-5 border-2 border-gray-200 rounded-xl transition-all duration-300 hover:shadow-lg hover:border-purple-500 cursor-pointer" data-group="group-c">
+                                <div class="flex items-center">
+                                    <!-- Icon (Giữ màu tím theo ảnh mới) -->
+                                    <div class="flex-shrink-0 w-10 h-10 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fa-solid fa-bolt text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-gray-900">Tài chính linh hoạt</h3>
+                                        <p class="text-gray-500 text-sm mt-0.5">Rút tiền, xoay vốn, trả góp với chi phí thấp.</p>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section (Ẩn ban đầu) -->
+        <section id="results-section" class="py-16 md:py-24 bg-gray-50 hidden">
+            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <!-- Tiêu đề căn giữa -->
+                <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-16 text-gray-900">
+                    Những chiếc thẻ dành cho bạn
+                </h2>
+
+                <!-- ===== NHÓM A: HOÀN TIỀM / TIẾT KIỆM (3 thẻ) ===== -->
+                <div id="group-a" class="result-group hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Card 1: VIB Family Link -->
+                        <div class="card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <!-- Ảnh Thumbnail -->
+                            <div class="card-thumbnail-container">
+                                <img src="https://www.vib.com.vn/wps/wcm/connect/60197637-f0bf-445e-9243-58384144058d/Family.webp?MOD=AJPERES&CACHEID=ROOTWORKSPACE-60197637-f0bf-445e-9243-58384144058d-pEk4Pj7" alt="Thẻ VIB Family Link">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <!-- Tiêu đề thẻ - Vẫn căn trái để giữ thẩm mỹ của thẻ -->
+                                <h4 class="text-2xl font-bold mb-4 text-gray-800">VIB Family Link</h4>
+                                <ul class="space-y-3 text-gray-600 text-sm mb-6 flex-grow">
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Hoàn đến <strong>10%</strong> cho Giáo dục, Y tế, Bảo hiểm</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span><strong>Giảm 50%</strong> phí thường niên khi liên kết Thẻ</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Tặng bảo hiểm giáo dục & tai nạn</span></li>
+                                </ul>
+                                <a href="https://clearpmf.com/ql/DYRuYL" target="_blank" class="btn-cta-card block w-full text-white font-bold text-center py-3 px-4 rounded-lg transition-all duration-300 transform">
+                                    MỞ THẺ NGAY
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: VIB Cash Back -->
+                        <div class="card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <!-- Ảnh Thumbnail -->
+                            <div class="card-thumbnail-container">
+                                <img src="https://www.vib.com.vn/wps/wcm/connect/f74899fe-73c4-4ad4-95a1-61a36e132029/Cashback.webp?MOD=AJPERES&CACHEID=ROOTWORKSPACE-f74899fe-73c4-4ad4-95a1-61a36e132029-pEk1QsB" alt="Thẻ VIB Cash Back">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-2xl font-bold mb-4 text-gray-800">VIB Cash Back</h4>
+                                <ul class="space-y-3 text-gray-600 text-sm mb-6 flex-grow">
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Tặng đến <strong>300.000đ</strong> cho giao dịch lưu thẻ đầu tiên</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Hoàn tiền đến <strong>10%</strong> (ẩm thực + giải trí)</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Ưu đãi trong 90 ngày đầu mở thẻ</span></li>
+                                </ul>
+                                <a href="https://clearpmf.com/ql/zctSF1XC" target="_blank" class="btn-cta-card block w-full text-white font-bold text-center py-3 px-4 rounded-lg transition-all duration-300 transform">
+                                    MỞ THẺ NGAY
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: VIB Super Card -->
+                        <div class="card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <!-- Ảnh Thumbnail -->
+                            <div class="card-thumbnail-container">
+                                <img src="https://www.vib.com.vn/wps/wcm/connect/e1131dd1-5efc-4364-a923-9111bf86d363/sp.webp?MOD=AJPERES&CACHEID=ROOTWORKSPACE-e1131dd1-5efc-4364-a923-9111bf86d363-pDBQHYC" alt="Thẻ VIB Super Card">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-2xl font-bold mb-4 text-gray-800">VIB Super Card</h4>
+                                <ul class="space-y-3 text-gray-600 text-sm mb-6 flex-grow">
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Hoàn linh hoạt đến <strong>15%</strong> theo danh mục tự chọn</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Chọn tỉ lệ thanh toán tối thiểu linh hoạt</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Tối ưu chi tiêu theo thói quen riêng</span></li>
+                                </ul>
+                                <a href="https://clearpmf.com/ql/FfYdBd" target="_blank" class="btn-cta-card block w-full text-white font-bold text-center py-3 px-4 rounded-lg transition-all duration-300 transform">
+                                    MỞ THẺ NGAY
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ===== NHÓM B: TÍCH ĐIỂM / TRAVEL (4 thẻ) ===== -->
+                <div id="group-b" class="result-group hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        
+                        <!-- Card 1: VIB Ivy Card -->
+                        <div class="card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="card-thumbnail-container"><img src="https://media.licdn.com/dms/image/v2/D5622AQFmr2OuPNZYCw/feedshare-shrink_800/feedshare-shrink_800/0/1714142956312?e=2147483647&v=beta&t=YD9NJ991ePghUzOKiCWCKElSdgMQIe7iWJy-gpReae8" alt="Thẻ VIB Ivy Card"></div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-2xl font-bold mb-4 text-gray-800">VIB Ivy Card</h4>
+                                <ul class="space-y-3 text-gray-600 text-sm mb-6 flex-grow">
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Miễn phí thường niên năm đầu (và duy trì theo chi tiêu)</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Tặng combo voucher/Anker/Phòng chờ khi mở qua Max</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Dịch vụ phòng chờ + làm thủ tục nhanh sân bay</span></li>
+                                </ul>
+                                <a href="https://clearpmf.com/ql/AoGyLq6b" target="_blank" class="btn-cta-card block w-full text-white font-bold text-center py-3 px-4 rounded-lg transition-all duration-300 transform">MỞ THẺ NGAY</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: VIB Rewards Unlimited -->
+                        <div class="card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="card-thumbnail-container"><img src="https://www.vib.com.vn/wps/wcm/connect/4171d0f5-5c92-4ebf-bcaa-42393abddbe5/Rewards.webp?MOD=AJPERES&CACHEID=ROOTWORKSPACE-4171d0f5-5c92-4ebf-bcaa-42393abddbe5-pEk1UNA" alt="Thẻ VIB Rewards Unlimited"></div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-2xl font-bold mb-4 text-gray-800">VIB Rewards Unlimited</h4>
+                                <ul class="space-y-3 text-gray-600 text-sm mb-6 flex-grow">
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Tặng điểm không giới hạn đến 10 lần</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Dành cho người mua sắm thường xuyên</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Tối ưu giá trị đổi quà từ mọi giao dịch</span></li>
+                                </ul>
+                                <a href="https://clearpmf.com/ql/jYeHYSSt" target="_blank" class="btn-cta-card block w-full text-white font-bold text-center py-3 px-4 rounded-lg transition-all duration-300 transform">MỞ THẺ NGAY</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: VIB Travel Élite -->
+                        <div class="card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="card-thumbnail-container"><img src="https://www.vib.com.vn/wps/wcm/connect/0c25bd02-7410-4c58-b187-e43eecc73735/travel+Elite.webp?MOD=AJPERES&CACHEID=ROOTWORKSPACE-0c25bd02-7410-4c58-b187-e43eecc73735-pEk1CfN" alt="Thẻ VIB Travel Élite"></div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-2xl font-bold mb-4 text-gray-800">VIB Travel Élite</h4>
+                                <ul class="space-y-3 text-gray-600 text-sm mb-6 flex-grow">
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Lounge 1.300 sân bay toàn cầu</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Phí ngoại tệ chỉ 1% (0% trong 3 sao kê đầu)</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Bảo hiểm du lịch toàn cầu đến 11 tỷ</span></li>
+                                </ul>
+                                <a href="https://clearpmf.com/ql/D0dUd0yTT" target="_blank" class="btn-cta-card block w-full text-white font-bold text-center py-3 px-4 rounded-lg transition-all duration-300 transform">MỞ THẺ NGAY</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: VIB Premier Boundless -->
+                        <div class="card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="card-thumbnail-container"><img src="https://www.vib.com.vn/wps/wcm/connect/5f5ac49f-65c8-43f2-b0d6-9ca300d6d653/Lotus.webp?MOD=AJPERES&CACHEID=ROOTWORKSPACE-5f5ac49f-65c8-43f2-b0d6-9ca300d6d653-pDylYko" alt="Thẻ VIB Premier Boundless"></div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-2xl font-bold mb-4 text-gray-800">VIB Premier Boundless</h4>
+                                <ul class="space-y-3 text-gray-600 text-sm mb-6 flex-grow">
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Hạn mức đến 2 tỷ đồng</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Tích lũy dặm Vietnam Airlines cho mọi chi tiêu</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Tặng 4.000 dặm + hỗ trợ nâng hạng Bông Sen Vàng</span></li>
+                                </ul>
+                                <a href="https://clearpmf.com/ql/Ubt9lF1B" target="_blank" class="btn-cta-card block w-full text-white font-bold text-center py-3 px-4 rounded-lg transition-all duration-300 transform">MỞ THẺ NGAY</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ===== NHÓM C: TÀI CHÍNH LINH HOẠT (2 thẻ) ===== -->
+                <div id="group-c" class="result-group hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        
+                        <!-- Card 1: VIB Financial Free -->
+                        <div class="card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="card-thumbnail-container"><img src="https://www.vib.com.vn/wps/wcm/connect/9a49481b-5d7c-4e41-875a-b1612b3615a2/Financial.webp?MOD=AJPERES&CACHEID=ROOTWORKSPACE-9a49481b-5d7c-4e41-875a-b1612b3615a2-pEk1Z0h" alt="Thẻ VIB Financial Free"></div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-2xl font-bold mb-4 text-gray-800">VIB Financial Free</h4>
+                                <ul class="space-y-3 text-gray-600 text-sm mb-6 flex-grow">
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Miễn phí thường niên trọn đời</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Rút tiền đến 100% hạn mức tín dụng</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Lãi suất 0% trong 3 kỳ đầu</span></li>
+                                </ul>
+                                <a href="https://clearpmf.com/ql/kt67Sdk" target="_blank" class="btn-cta-card block w-full text-white font-bold text-center py-3 px-4 rounded-lg transition-all duration-300 transform">MỞ THẺ NGAY</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: VPBank Online Credit Card -->
+                        <div class="card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="card-thumbnail-container"><img src="https://www.vpbank.com.vn/-/media/vpbank-latest/1retail/picture/0-dich-vu-the/cards/800x507.png" alt="Thẻ VPBank Online Credit Card"></div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h4 class="text-2xl font-bold mb-4 text-gray-800">VPBank Online Credit Card</h4>
+                                <ul class="space-y-3 text-gray-600 text-sm mb-6 flex-grow">
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Mở thẻ 100% online nhanh chóng</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Duyệt hồ sơ đơn giản, giải ngân nhanh</span></li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check-circle text-green-500 w-5 mr-2 pt-1"></i><span>Chi tiêu online dễ dàng, không cần ra quầy</span></li>
+                                </ul>
+                                <a href="https://clearpmf.com/ql/9s88gCvV" target="_blank" class="btn-cta-card block w-full text-white font-bold text-center py-3 px-4 rounded-lg transition-all duration-300 transform">MỞ THẺ NGAY</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- "Why Choose Us" Section -->
+        <section class="py-16 md:py-24 bg-blue-50">
+            <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+                <!-- Tiêu đề căn giữa -->
+                <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6 mx-auto">
+                    Tại sao nên chọn đối tác của Trạm tài chính?
+                </h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-16">
+                    Chúng tôi không chỉ giúp bạn tìm thẻ. Chúng tôi đã đàm phán với các đối tác hàng đầu để đảm bảo bạn nhận được những quyền lợi độc quyền, quy trình tinh gọn và sự hỗ trợ tốt nhất.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    <!-- Feature 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center text-center">
+                        <i class="fa-solid fa-percent text-3xl text-blue-600 bg-blue-100 p-4 rounded-full mb-5"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Ưu đãi độc quyền</h3>
+                        <p class="text-gray-500">Nhận thêm quà tặng, voucher, và các gói miễn phí chỉ có khi đăng ký qua liên kết của Trạm tài chính.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center text-center">
+                        <i class="fa-solid fa-rocket text-3xl text-blue-600 bg-blue-100 p-4 rounded-full mb-5"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Quy trình tinh gọn</h3>
+                        <p class="text-gray-500">Ưu tiên xử lý hồ sơ, duyệt thẻ nhanh 100% online. Không cần giấy tờ phức tạp, không mất thời gian chờ đợi.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center text-center">
+                        <i class="fa-solid fa-shield-halved text-3xl text-blue-600 bg-blue-100 p-4 rounded-full mb-5"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Hỗ trợ minh bạch</h3>
+                        <p class="text-gray-500">Thông tin về biểu phí, lãi suất và điều kiện được trình bày rõ ràng, giúp bạn ra quyết định an tâm nhất.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                <!-- Tiêu đề căn giữa -->
+                <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-16 text-gray-900">
+                    Câu hỏi thường gặp (FAQ)
+                </h2>
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <details class="group bg-gray-50 rounded-xl p-6 border border-gray-200 cursor-pointer">
+                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-900">
+                            Mở thẻ qua Trạm tài chính có mất phí không?
+                            <span class="faq-icon">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                        </summary>
+                        <p class="text-gray-600 mt-4 leading-relaxed">
+                            Hoàn toàn không. Dịch vụ của Trạm tài chính là miễn phí 100% cho người dùng. Chúng tôi là đối tác truyền thông và nhận hoa hồng từ các tổ chức tài chính khi bạn mở thẻ thành công qua liên kết của chúng tôi.
+                        </p>
+                    </details>
+                    <!-- FAQ Item 2 -->
+                    <details class="group bg-gray-50 rounded-xl p-6 border border-gray-200 cursor-pointer">
+                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-900">
+                            Mở thẻ online mất bao lâu?
+                            <span class="faq-icon">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                        </summary>
+                        <p class="text-gray-600 mt-4 leading-relaxed">
+                            Thời gian duyệt thẻ phụ thuộc vào từng ngân hàng. Với các thẻ 100% online (như VPBank), bạn có thể được duyệt và nhận thông tin thẻ ảo để chi tiêu ngay chỉ sau 15-30 phút. Với các thẻ khác, quy trình có thể mất từ 1-3 ngày làm việc.
+                        </p>
+                    </details>
+                    <!-- FAQ Item 3 -->
+                    <details class="group bg-gray-50 rounded-xl p-6 border border-gray-200 cursor-pointer">
+                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-900">
+                            Ưu đãi độc quyền qua Trạm tài chính là gì?
+                            <span class="faq-icon">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                        </summary>
+                        <p class="text-gray-600 mt-4 leading-relaxed">
+                            Ngoài các ưu đãi mặc định từ ngân hàng, khi bạn đăng ký qua liên kết của chúng tôi, bạn có thể nhận thêm các phần quà (voucher, tiền mặt, quà tặng hiện vật...) tùy theo chương trình hợp tác của chúng tôi và đối tác tại từng thời điểm.
+                        </p>
+                    </details>
+                    <!-- FAQ Item 4 -->
+                    <details class="group bg-gray-50 rounded-xl p-6 border border-gray-200 cursor-pointer">
+                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-900">
+                            Tôi cần chuẩn bị gì để mở thẻ?
+                            <span class="faq-icon">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                        </summary>
+                        <p class="text-gray-600 mt-4 leading-relaxed">
+                            Hầu hết các quy trình mở thẻ online hiện nay chỉ yêu cầu bạn có CMND/CCCD còn hiệu lực và thực hiện định danh (eKYC) qua camera điện thoại/webcam. Một số thẻ có thể yêu cầu chứng minh thu nhập (sao kê lương, hợp đồng lao động), nhưng nhiều thẻ (như VPBank Online) được duyệt nhanh mà không cần thủ tục này.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer - Đã chỉnh sửa để thân thiện hơn trên Mobile -->
+    <footer class="bg-gray-800 text-gray-300 py-12 md:py-16">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            
+            <!-- Phần chính Footer (Chia cột trên PC, xếp chồng trên Mobile) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 pb-10 border-b border-gray-700">
+                
+                <!-- Cột 1: Logo & Giới thiệu -->
+                <div class="col-span-2 md:col-span-1 mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-white"> <span class="text-blue-400"></span> Trạm tài chính</a>
+                    <p class="text-sm mt-3 text-gray-400 max-w-xs">
+                        Tư vấn và kết nối tài chính minh bạch. Chúng tôi giúp bạn đưa ra quyết định thông minh hơn.
+                    </p>
+                </div>
+
+                <!-- Cột 2: Hỗ trợ -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Hỗ Trợ</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#faq-section" class="hover:text-blue-400 transition-colors">Câu hỏi thường gặp</a></li>
+                        <li><a href="#" class="popup-trigger hover:text-blue-400 transition-colors" data-popup="popup-contact">Liên hệ</a></li>
+                        <li><a href="#" class="popup-trigger hover:text-blue-400 transition-colors" data-popup="popup-terms">Điều khoản chung</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột 3: Pháp lý -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Pháp Lý</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="popup-trigger hover:text-blue-400 transition-colors" data-popup="popup-policy">Chính sách bảo mật</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Chính sách Cookie</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Miễn trừ trách nhiệm</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột 4: Theo dõi -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white">Theo Dõi</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-facebook-f text-white text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-twitter text-white text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-gray-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-linkedin-in text-white text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disclaimer Block -->
+            <div class="border border-red-500 rounded-lg p-5 text-center my-8 bg-gray-900 shadow-xl">
+                <p class="text-gray-200 text-sm leading-relaxed">
+                    <strong class="text-red-400 text-base block mb-1">TUYÊN BỐ MIỄN TRỪ TRÁCH NHIỆM:</strong> 
+                    Trạm Tài Chính là nền tảng giúp bạn tra cứu và so sánh ưu đãi thẻ từ các ngân hàng/đối tác liên kết (VIB, VPBank…).
+Chúng tôi không trực tiếp cung cấp sản phẩm tài chính và không đại diện cho bất kỳ ngân hàng nào.</br>Mọi quyết định đăng ký dịch vụ là hoàn toàn do bạn lựa chọn.
+Vui lòng xem kỹ biểu phí, điều khoản và chính sách cụ thể trên trang chính thức của từng đối tác trước khi hoàn tất đăng ký.
+                </p>
+            </div>
+
+            <!-- Copyright -->
+            <p class="text-center text-gray-500 text-sm mt-8">
+                © 2025 Trạm tài chính. Mọi quyền được bảo lưu.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ===== POPUP MODALS (Không thay đổi) ===== -->
+
+    <!-- Popup 1: Chính sách bảo mật -->
+    <div id="popup-policy" class="popup-overlay">
+        <div class="popup-content">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold">Chính sách bảo mật</h3>
+                <button class="popup-close text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <div class="space-y-4 text-gray-600">
+                <p>Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn. Khi bạn truy cập trang này, chúng tôi có thể thu thập dữ liệu ẩn danh thông qua cookies để cải thiện trải nghiệm...</p>
+                <p>Chúng tôi không lưu trữ, bán, hoặc chia sẻ thông tin cá nhân nhạy cảm của bạn. Bất kỳ thông tin nào bạn cung cấp khi nhấp vào liên kết đối tác sẽ tuân theo chính sách bảo mật của đối tác đó.</p>
+                <p>Nội dung chi tiết về chính sách bảo mật...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup 2: Điều khoản sử dụng -->
+    <div id="popup-terms" class="popup-overlay">
+        <div class="popup-content">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold">Điều khoản sử dụng</h3>
+                <button class="popup-close text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <div class="space-y-4 text-gray-600">
+                <p>Bằng cách sử dụng trang web này, bạn đồng ý với các điều khoản... Các liên kết trên trang là liên kết tiếp thị liên kết. Khi bạn nhấp vào và đăng ký thành công, chúng tôi có thể nhận được một khoản hoa hồng...</p>
+                <p>Thông tin trên trang chỉ mang tính chất tham khảo. Mọi quyết định tài chính là của riêng bạn. Vui lòng đọc kỹ thông tin sản phẩm trên trang của đối tác trước khi đăng ký.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup 3: Liên hệ -->
+    <div id="popup-contact" class="popup-overlay">
+        <div class="popup-content">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold">Liên hệ</h3>
+                <button class="popup-close text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            <div class="space-y-4 text-gray-600">
+                <p>Nếu bạn có bất kỳ câu hỏi hoặc thắc mắc nào, vui lòng liên hệ với Trạm tài chính qua:</p>
+                <ul class="list-none space-y-3">
+                    <li><i class="fa-solid fa-envelope w-5 mr-2 text-blue-600"></i><strong>Email:</strong> <a href="mailto:Lienhe@tramtaichinh.com" class="text-blue-600 hover:underline">Lienhe@tramtaichinh.com</a></li>
+                    <li><i class="fa-solid fa-phone w-5 mr-2 text-blue-600"></i><strong>SĐT:</strong> <a href="tel:0585574757" class="text-blue-600 hover:underline">0585 574 757</a></li>
+                    <li><i class="fa-solid fa-globe w-5 mr-2 text-blue-600"></i><strong>Website:</strong> <a href="https://Tramtaichinh.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Tramtaichinh.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript để xử lý logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // --- Logic Lọc Thẻ ---
+            const filterButtons = document.querySelectorAll('.filter-option');
+            const resultsSection = document.getElementById('results-section');
+            const resultGroups = document.querySelectorAll('.result-group');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const groupToShow = this.getAttribute('data-group');
+
+                    // 1. Cập nhật trạng thái 'active' cho nút
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // 2. Ẩn tất cả các nhóm kết quả
+                    resultGroups.forEach(group => {
+                        if (!group.classList.contains('hidden')) {
+                            group.classList.add('hidden');
+                        }
+                    });
+
+                    // 3. Hiển thị nhóm kết quả tương ứng
+                    const activeGroup = document.getElementById(groupToShow);
+                    if (activeGroup) {
+                        activeGroup.classList.remove('hidden');
+                    }
+
+                    // 4. Hiển thị phần kết quả chính
+                    resultsSection.classList.remove('hidden');
+
+                    // 5. Cuộn mượt xuống phần kết quả
+                    setTimeout(() => {
+                        resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100); // Thêm 1 chút delay để đảm bảo DOM đã render
+                });
+            });
+
+            // --- Logic Popup ---
+            const popupTriggers = document.querySelectorAll('.popup-trigger');
+            const popupOverlays = document.querySelectorAll('.popup-overlay');
+            const popupCloses = document.querySelectorAll('.popup-close');
+
+            // Mở popup
+            popupTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const popupId = trigger.getAttribute('data-popup');
+                    const popup = document.getElementById(popupId);
+                    if (popup) {
+                        popup.classList.add('active');
+                    }
+                });
+            });
+
+            // Đóng popup
+            const closePopup = (popup) => {
+                popup.classList.remove('active');
+            };
+
+            popupCloses.forEach(closeBtn => {
+                closeBtn.addEventListener('click', () => {
+                    closePopup(closeBtn.closest('.popup-overlay'));
+                });
+            });
+
+            // Đóng popup khi click bên ngoài (vào overlay)
+            popupOverlays.forEach(overlay => {
+                overlay.addEventListener('click', (event) => {
+                    // Chỉ đóng nếu click trực tiếp vào overlay (không phải content bên trong)
+                    if (event.target === overlay) {
+                        closePopup(overlay);
+                    }
+                });
+            });
+
+        });
+    </script>
+
+</body>
+</html>
