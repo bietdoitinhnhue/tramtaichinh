@@ -1,0 +1,134 @@
+:root {
+  --ttc-color-bg: #f4f8f3;
+  --ttc-color-bg-strong: #e5efe4;
+  --ttc-color-ink: #112117;
+  --ttc-color-muted: #587060;
+  --ttc-color-primary: #12613a;
+  --ttc-color-primary-strong: #0b482a;
+  --ttc-color-accent: #f4c95d;
+  --ttc-color-border: #cddbcf;
+  --ttc-color-surface: #ffffff;
+  --ttc-radius-sm: 0.75rem;
+  --ttc-radius-md: 1.25rem;
+  --ttc-radius-lg: 2rem;
+  --ttc-shadow-soft: 0 1.5rem 4rem rgb(17 33 23 / 10%);
+  --ttc-space-1: 0.25rem;
+  --ttc-space-2: 0.5rem;
+  --ttc-space-3: 0.75rem;
+  --ttc-space-4: 1rem;
+  --ttc-space-6: 1.5rem;
+  --ttc-space-8: 2rem;
+  --ttc-space-12: 3rem;
+  --ttc-container: 72rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.ttc-container {
+  margin-inline: auto;
+  max-width: var(--ttc-container);
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
+  width: 100%;
+}
+
+.ttc-brand {
+  align-items: center;
+  display: inline-flex;
+  font-weight: 800;
+  gap: var(--ttc-space-3);
+  letter-spacing: -0.02em;
+}
+
+.ttc-brand__symbol {
+  align-items: center;
+  background: var(--ttc-color-primary);
+  border-radius: 0.7rem;
+  color: white;
+  display: inline-flex;
+  height: 2.25rem;
+  justify-content: center;
+  width: 2.25rem;
+}
+
+.ttc-action-link {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  display: inline-flex;
+  font-weight: 750;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.2rem;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.ttc-action-link:hover {
+  transform: translateY(-1px);
+}
+
+.ttc-action-link:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--ttc-color-accent) 75%, white);
+  outline-offset: 3px;
+}
+
+.ttc-action-link--primary {
+  background: var(--ttc-color-primary);
+  color: white;
+}
+
+.ttc-action-link--primary:hover {
+  background: var(--ttc-color-primary-strong);
+}
+
+.ttc-action-link--secondary {
+  background: transparent;
+  border-color: var(--ttc-color-border);
+  color: var(--ttc-color-primary-strong);
+}
+
+.ttc-action-link--secondary:hover {
+  background: var(--ttc-color-bg-strong);
+}
+
+.ttc-surface {
+  background: var(--ttc-color-surface);
+  border: 1px solid var(--ttc-color-border);
+  border-radius: var(--ttc-radius-md);
+  box-shadow: var(--ttc-shadow-soft);
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
