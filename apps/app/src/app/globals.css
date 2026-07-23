@@ -1,0 +1,63 @@
+body {
+  background: linear-gradient(145deg, rgb(18 97 58 / 8%), transparent 45%), var(--ttc-color-bg);
+  color: var(--ttc-color-ink);
+  min-height: 100vh;
+}
+
+.app-shell {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding-block: 3rem;
+}
+
+.app-shell .ttc-surface {
+  max-width: 52rem;
+}
+
+.app-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: clamp(2.5rem, 8vw, 5rem);
+}
+
+.app-eyebrow {
+  color: var(--ttc-color-primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.app-shell h1 {
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  letter-spacing: -0.06em;
+  line-height: 1;
+  margin: 0.8rem 0 1.3rem;
+}
+
+.app-lead {
+  color: var(--ttc-color-muted);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 42rem;
+}
+
+.status-row {
+  align-items: center;
+  color: var(--ttc-color-muted);
+  display: flex;
+  font-size: 0.9rem;
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+
+.status-dot {
+  background: var(--ttc-color-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.3rem rgb(18 97 58 / 12%);
+  height: 0.6rem;
+  width: 0.6rem;
+}

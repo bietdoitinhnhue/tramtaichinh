@@ -1,0 +1,40 @@
+{
+  "name": "tram-tai-chinh",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Monorepo for tramtaichinh.com and app.tramtaichinh.com",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=24.0.0 <25",
+    "pnpm": ">=11.7.0 <12"
+  },
+  "packageManager": "pnpm@11.7.0",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "env:check": "node --env-file=.env.example --import tsx scripts/validate-env.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "turbo run lint",
+    "supabase": "supabase",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "typecheck": "turbo run typecheck"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1",
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@vitest/coverage-v8": "4.1.10",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.2.11",
+    "prettier": "3.9.6",
+    "supabase": "2.109.1",
+    "tsx": "4.23.1",
+    "turbo": "2.10.6",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  }
+}

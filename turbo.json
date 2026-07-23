@@ -1,0 +1,47 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "eslint.config.mjs",
+    "prettier.config.mjs",
+    "tsconfig.base.json",
+    "vitest.config.ts"
+  ],
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "dependsOn": ["^lint"],
+      "outputs": []
+    },
+    "typecheck": {
+      "dependsOn": ["^typecheck"],
+      "outputs": []
+    },
+    "@tram-tai-chinh/config#build": {
+      "outputs": []
+    },
+    "@tram-tai-chinh/database-types#build": {
+      "outputs": []
+    },
+    "@tram-tai-chinh/finance-core#build": {
+      "outputs": []
+    },
+    "@tram-tai-chinh/seo#build": {
+      "outputs": []
+    },
+    "@tram-tai-chinh/ui#build": {
+      "outputs": []
+    },
+    "@tram-tai-chinh/validation#build": {
+      "outputs": []
+    }
+  }
+}
